@@ -1,8 +1,21 @@
-import logo from "../src/assets/logo.png";
+import { cartIcon, logo } from "../../assets";
 export function Navbar() {
   return (
-    <div className="bg-red-500 h-[300px] w-[300px]">
-      <img height={200} src={logo} alt="" />
+    <div className="flex justify-around shadow-black">
+      <div>
+        <img src={logo} alt="logo" />
+        <p>SHOPPING</p>
+      </div>
+      <ul>
+        <li>Shop</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>Kids</li>
+      </ul>
+      <div>
+        <button>Login</button>
+        <img src={cartIcon} alt="cart" />
+      </div>
     </div>
   );
 }
