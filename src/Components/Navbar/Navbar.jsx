@@ -65,8 +65,9 @@ export function Navbar() {
         <button
           className="px-8 py-3 rounded-full border-[1px]
          border-slate-gray font-sans text-slate-600
-         text-lg outline-none hover:transition-all duration-1000 active:bg-slate-100
-         hover:bg-gradient-to-r from-orange-500 to-yellow-500
+         text-lg font-medium outline-none transition ease-in-out
+          duration-75 active:bg-slate-100
+         hover:bg-yellow-500 hover:border-yellow-500
           hover:text-white  "
         >
           Login
@@ -74,8 +75,8 @@ export function Navbar() {
         <img
           src={cartIcon}
           alt="cart"
-          height={40}
-          width={40}
+          height={45}
+          width={45}
           className="object-contain"
         />
       </div>
