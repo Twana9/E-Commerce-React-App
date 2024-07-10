@@ -1,13 +1,15 @@
+import { useState } from "react";
 import { cartIcon, logo } from "../../assets";
 import "./Navbar.css";
 export function Navbar() {
+  const [selectedMenu, setSelectedMenu] = useState("shop");
   return (
     <div
       className="flex justify-around shadow-nav
      shadow-black p-4"
     >
       <div
-        className="flex  
+        className="flex cursor-pointer 
        items-center gap-3"
       >
         <img
@@ -30,32 +32,56 @@ export function Navbar() {
         font-monserat"
       >
         <li
+          onClick={() => setSelectedMenu("shop")}
           className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
         >
-          Shop
-          <hr
-            className="border-none w-[80%]
+          Shop{" "}
+          {selectedMenu === "shop" && (
+            <hr
+              className="border-none w-[80%]
           h-[3px] rounded-[10px] bg-red-500"
-          />
+            />
+          )}
         </li>
         <li
+          onClick={() => setSelectedMenu("men")}
           className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
         >
           Men
+          {selectedMenu === "men" && (
+            <hr
+              className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+            />
+          )}
         </li>
         <li
+          onClick={() => setSelectedMenu("women")}
           className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
         >
           Women
+          {selectedMenu === "women" && (
+            <hr
+              className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+            />
+          )}
         </li>
         <li
+          onClick={() => setSelectedMenu("kids")}
           className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
         >
           Kids
+          {selectedMenu === "kids" && (
+            <hr
+              className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+            />
+          )}
         </li>
       </ul>
       <div
@@ -77,8 +103,15 @@ export function Navbar() {
           alt="cart"
           height={45}
           width={45}
-          className="object-contain"
+          className="object-contain cursor-pointer"
         />
+        <div
+          className="w-6 h-6 flex justify-center items-center
+         -ml-14 -mt-9 text-[16px] bg-red-500 text-white
+         cursor-pointer rounded-xl"
+        >
+          0
+        </div>
       </div>
     </div>
   );
