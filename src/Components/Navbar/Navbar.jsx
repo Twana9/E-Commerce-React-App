@@ -36,7 +36,7 @@ export function Navbar() {
           className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
         >
-          Shop{" "}
+          Shop
           {selectedMenu === "shop" && (
             <hr
               className="border-none w-[80%]
