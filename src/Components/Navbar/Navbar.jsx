@@ -147,11 +147,15 @@ export function Navbar() {
 }
 function Hamburger({ handleClick, isMenuOpen, selectedMenu, setSelectedMenu }) {
   return (
-    <div>
+    <div
+      className={`fixed  inset-0 
+      transition-all  duration-[5s] ease-linear
+      ${isMenuOpen && "layout animate-duration-5000"}
+      `}
+    >
       <div
-        className={`absolute top-0 -right-[1000px] h-screen
-       w-[80%] bg-white shadow-lg z-50 p-4 inset-0
-       ${isMenuOpen && "right-0"} transition-all ease-in-out duration-500`}
+        className="absolute top-0 right-0 w-[80%] h-full
+       bg-white z-50 p-4"
       >
         <ul
           className="flex flex-col items-start gap-10
@@ -214,10 +218,8 @@ function Hamburger({ handleClick, isMenuOpen, selectedMenu, setSelectedMenu }) {
       </div>
       <div
         onClick={handleClick}
-        className={`absolute top-0 -right-[1000px] h-screen w-screen z-40
-         bg-black inset-0  ${
-           isMenuOpen && "right-0"
-         } transition-all ease-in-out duration-500`}
+        className={`absolute top-0  right-0 h-full w-full z-40
+         bg-black inset-0 opacity-40 `}
       ></div>
     </div>
   );

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .shadow-nav {
   box-shadow: 0 1px 3px -2px black;
 }
@@ -7,3 +11,19 @@
     @apply;
   }
 } */
+
+/* //////////animations///////////////// */
+@keyframes layOut {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+/* ////////////////////layers///////////////////// */
+@layer utilities {
+  .animate-duration-5000 {
+    animation-duration: 2s;
+  }
+}
