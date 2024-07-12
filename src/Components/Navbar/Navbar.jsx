@@ -3,9 +3,9 @@ import { cartIcon, hamburger, logo } from "../../assets";
 import "./Navbar.css";
 export function Navbar() {
   const [selectedMenu, setSelectedMenu] = useState("shop");
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   function handleClick() {
-    setIsMenuOpen(true);
+    setIsMenuOpen(!isMenuOpen);
   }
   return (
     <div
@@ -137,6 +137,7 @@ export function Navbar() {
               isMenuOpen={isMenuOpen}
               selectedMenu={selectedMenu}
               setSelectedMenu={setSelectedMenu}
+              handleClick={handleClick}
             />
           )}
         </div>
@@ -144,70 +145,80 @@ export function Navbar() {
     </div>
   );
 }
-function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu }) {
+function Hamburger({ handleClick, isMenuOpen, selectedMenu, setSelectedMenu }) {
   return (
-    <div
-      className=" absolute top-0 right-0 h-screen
-       w-[80%] bg-white shadow-lg z-50 p-4 "
-    >
-      <ul
-        className="flex flex-col items-start gap-10
+    <div>
+      <div
+        className={`absolute top-0 -right-[1000px] h-screen
+       w-[80%] bg-white shadow-lg z-50 p-4 inset-0
+       ${isMenuOpen && "right-0"} transition-all ease-in-out duration-500`}
+      >
+        <ul
+          className="flex flex-col items-start gap-10
         font-medium text-lg text-slate-700
         font-monserat p-16 "
-      >
-        <li
-          onClick={() => setSelectedMenu("shop")}
-          className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
         >
-          Shop
-          {selectedMenu === "shop" && (
-            <hr
-              className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
-        </li>
-        <li
-          onClick={() => setSelectedMenu("men")}
-          className="flex flex-col items-center
+          <li
+            onClick={() => setSelectedMenu("shop")}
+            className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
-        >
-          Men
-          {selectedMenu === "men" && (
-            <hr
-              className="border-none w-[80%]
+          >
+            Shop
+            {selectedMenu === "shop" && (
+              <hr
+                className="border-none w-[80%]
           h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
-        </li>
-        <li
-          onClick={() => setSelectedMenu("women")}
-          className="flex flex-col items-center
+              />
+            )}
+          </li>
+          <li
+            onClick={() => setSelectedMenu("men")}
+            className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
-        >
-          Women
-          {selectedMenu === "women" && (
-            <hr
-              className="border-none w-[80%]
+          >
+            Men
+            {selectedMenu === "men" && (
+              <hr
+                className="border-none w-[80%]
           h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
-        </li>
-        <li
-          onClick={() => setSelectedMenu("kids")}
-          className="flex flex-col items-center
+              />
+            )}
+          </li>
+          <li
+            onClick={() => setSelectedMenu("women")}
+            className="flex flex-col items-center
            justify-center gap-1 cursor-pointer"
-        >
-          Kids
-          {selectedMenu === "kids" && (
-            <hr
-              className="border-none w-[80%]
+          >
+            Women
+            {selectedMenu === "women" && (
+              <hr
+                className="border-none w-[80%]
           h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
-        </li>
-      </ul>
+              />
+            )}
+          </li>
+          <li
+            onClick={() => setSelectedMenu("kids")}
+            className="flex flex-col items-center
+           justify-center gap-1 cursor-pointer"
+          >
+            Kids
+            {selectedMenu === "kids" && (
+              <hr
+                className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+              />
+            )}
+          </li>
+        </ul>
+      </div>
+      <div
+        onClick={handleClick}
+        className={`absolute top-0 -right-[1000px] h-screen w-screen z-40
+         bg-black inset-0  ${
+           isMenuOpen && "right-0"
+         } transition-all ease-in-out duration-500`}
+      ></div>
     </div>
   );
 }
