@@ -1,27 +1,35 @@
 import { useState } from "react";
-import { cartIcon, logo } from "../../assets";
+import { cartIcon, hamburger, logo } from "../../assets";
 import "./Navbar.css";
 export function Navbar() {
   const [selectedMenu, setSelectedMenu] = useState("shop");
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  function handleClick() {
+    setIsMenuOpen(true);
+  }
   return (
     <div
       className="flex justify-around shadow-nav
-     shadow-black p-4 max-lg:justify-between"
+     shadow-black p-4 max-lg:justify-between
+     "
     >
       <div
         className="flex cursor-pointer 
-       items-center gap-3"
+       items-center gap-4 max-md:gap-2"
       >
         <img
           src={logo}
           alt="logo"
           height={52}
           width={52}
-          className="object-contain"
+          className="object-contain max-md:h-[36px]
+          max-md:w-[36px] max-lg:w-[45px] max-lg:h-[45px]
+          mb-1"
         />
         <p
           className="text-[#171717] font-semibold 
-        text-[29px] font-sans"
+        text-[29px] font-sans max-md:text-[16px]
+        max-lg:text-[23px]"
         >
           SHOPPING
         </p>
@@ -86,7 +94,7 @@ export function Navbar() {
       </ul>
       <div
         className="flex 
-       items-center gap-11"
+       items-center gap-11 max-md:gap-8"
       >
         <button
           className="px-8 py-3 rounded-full border-[1px]
@@ -103,19 +111,103 @@ export function Navbar() {
           alt="cart"
           height={45}
           width={45}
-          className="object-contain cursor-pointer"
+          className="object-contain cursor-pointer
+          max-md:h-[33px] max-md:w-[33px]
+          max-lg:w-[40px] max-lg:h-[40px]"
         />
         <div
           className="w-6 h-6 flex justify-center items-center
           -ml-14 -mt-9 text-[16px] bg-red-500 text-white
-          cursor-pointer rounded-xl"
+          cursor-pointer rounded-xl max-md:h-[18px] max-md:w-[18px]
+          max-md:-ml-[45px] max-md:-mt-7 max-md:text-[12px]"
         >
           0
         </div>
-        <div>
-          <img src={burgar} alt="nav" />
+        <div className="lg:hidden" onClick={handleClick}>
+          <img
+            src={hamburger}
+            alt="nav"
+            height={45}
+            width={45}
+            className="object-contain max-md:h-[33px] max-md:w-[33px]
+            max-lg:w-[40px] max-lg:h-[40px] cursor-pointer"
+          />
+          {isMenuOpen && (
+            <Hamburger
+              isMenuOpen={isMenuOpen}
+              selectedMenu={selectedMenu}
+              setSelectedMenu={setSelectedMenu}
+            />
+          )}
         </div>
       </div>
+    </div>
+  );
+}
+function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu }) {
+  return (
+    <div
+      className=" absolute top-0 right-0 h-screen
+       w-[80%] bg-white shadow-lg z-50 p-4 "
+    >
+      <ul
+        className="flex flex-col items-start gap-10
+        font-medium text-lg text-slate-700
+        font-monserat p-16 "
+      >
+        <li
+          onClick={() => setSelectedMenu("shop")}
+          className="flex flex-col items-center
+           justify-center gap-1 cursor-pointer"
+        >
+          Shop
+          {selectedMenu === "shop" && (
+            <hr
+              className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+            />
+          )}
+        </li>
+        <li
+          onClick={() => setSelectedMenu("men")}
+          className="flex flex-col items-center
+           justify-center gap-1 cursor-pointer"
+        >
+          Men
+          {selectedMenu === "men" && (
+            <hr
+              className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+            />
+          )}
+        </li>
+        <li
+          onClick={() => setSelectedMenu("women")}
+          className="flex flex-col items-center
+           justify-center gap-1 cursor-pointer"
+        >
+          Women
+          {selectedMenu === "women" && (
+            <hr
+              className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+            />
+          )}
+        </li>
+        <li
+          onClick={() => setSelectedMenu("kids")}
+          className="flex flex-col items-center
+           justify-center gap-1 cursor-pointer"
+        >
+          Kids
+          {selectedMenu === "kids" && (
+            <hr
+              className="border-none w-[80%]
+          h-[3px] rounded-[10px] bg-red-500"
+            />
+          )}
+        </li>
+      </ul>
     </div>
   );
 }
