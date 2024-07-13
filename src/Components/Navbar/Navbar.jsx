@@ -132,25 +132,28 @@ export function Navbar() {
             className="object-contain max-md:h-[33px] max-md:w-[33px]
             max-lg:w-[40px] max-lg:h-[40px] cursor-pointer"
           />
-          {isMenuOpen && (
-            <Hamburger
-              isMenuOpen={isMenuOpen}
-              selectedMenu={selectedMenu}
-              setSelectedMenu={setSelectedMenu}
-              handleClick={handleClick}
-            />
-          )}
+
+          <Hamburger
+            isMenuOpen={isMenuOpen}
+            selectedMenu={selectedMenu}
+            setSelectedMenu={setSelectedMenu}
+            setIsMenuOpen={setIsMenuOpen}
+          />
         </div>
       </div>
     </div>
   );
 }
-function Hamburger({ handleClick, isMenuOpen, selectedMenu, setSelectedMenu }) {
+function Hamburger({
+  setIsMenuOpen,
+  isMenuOpen,
+  selectedMenu,
+  setSelectedMenu,
+}) {
   return (
     <div
-      className={`fixed  inset-0 
-      transition-all  duration-[5s] ease-linear
-      ${isMenuOpen && "layout animate-duration-5000"}
+      className={`fixed  inset-0  translate-x-full lg:hidden
+      transition-transform duration-500 ${isMenuOpen && "translate-x-0 "}
       `}
     >
       <div
@@ -217,7 +220,10 @@ function Hamburger({ handleClick, isMenuOpen, selectedMenu, setSelectedMenu }) {
         </ul>
       </div>
       <div
-        onClick={handleClick}
+        onClick={(e) => {
+          e.preventDefault();
+          setIsMenuOpen(!isMenuOpen);
+        }}
         className={`absolute top-0  right-0 h-full w-full z-40
          bg-black inset-0 opacity-40 `}
       ></div>
