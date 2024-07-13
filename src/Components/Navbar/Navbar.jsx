@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cartIcon, hamburger, logo } from "../../assets";
 import "./Navbar.css";
 export function Navbar() {
@@ -11,6 +11,24 @@ export function Navbar() {
     e.stopPropagation();
     setIsMenuOpen(!isMenuOpen);
   }
+  //////////////////////////////
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 1024) setIsMenuOpen(false);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMenuOpen]);
+  /////////////////////////////
+  useEffect(() => {
+    if (isMenuOpen) document.body.classList.add("overflow-hidden");
+    else document.body.classList.remove("overflow-hidden");
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isMenuOpen]);
   return (
     <div
       className="flex justify-around shadow-nav
@@ -105,7 +123,6 @@ export function Navbar() {
             isMenuOpen={isMenuOpen}
             selectedMenu={selectedMenu}
             setSelectedMenu={setSelectedMenu}
-            setIsMenuOpen={setIsMenuOpen}
             handleClose={handleClose}
           />
         </div>

@@ -28,7 +28,11 @@
   animation-timing-function: ease;
 }
 /* ////////////////////utilities///////////////////// */
-
+@layer utilities {
+  .overflow-hidden {
+    overflow: hidden;
+  }
+}
 /* //////////////componenets////////////////////////////// */
 @layer components {
   .shadow-nav {
