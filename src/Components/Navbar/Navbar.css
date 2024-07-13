@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.shadow-nav {
-  box-shadow: 0 1px 3px -2px black;
-}
-
-/* @layer themes {
-  .shadow-nav {
-    @apply;
-  }
-} */
-
 /* //////////animations///////////////// */
 @keyframes layOut {
   0% {
@@ -37,14 +27,23 @@
   animation-duration: 2s;
   animation-timing-function: ease;
 }
-/* ////////////////////layers///////////////////// */
-.responsive {
-  transform: translateX(0);
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+/* ////////////////////utilities///////////////////// */
+
+/* //////////////componenets////////////////////////////// */
+@layer components {
+  .shadow-nav {
+    box-shadow: 0 1px 3px -2px black;
+  }
+  .li-big {
+    @apply flex flex-col items-center
+    justify-center gap-1 cursor-pointer;
+  }
+  .li-small {
+    @apply flex flex-col items-center
+    justify-center gap-1 cursor-pointer;
+  }
+  .hr {
+    @apply border-none w-[80%]
+    h-[3px] rounded-[10px] bg-red-500;
+  }
 }

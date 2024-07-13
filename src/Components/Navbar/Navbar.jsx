@@ -5,6 +5,10 @@ export function Navbar() {
   const [selectedMenu, setSelectedMenu] = useState("shop");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   function handleClick() {
+    setIsMenuOpen(true);
+  }
+  function handleClose(e) {
+    e.stopPropagation();
     setIsMenuOpen(!isMenuOpen);
   }
   return (
@@ -39,57 +43,21 @@ export function Navbar() {
         font-medium text-lg text-slate-700
         font-monserat max-lg:hidden"
       >
-        <li
-          onClick={() => setSelectedMenu("shop")}
-          className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
-        >
+        <li onClick={() => setSelectedMenu("shop")} className="li-big">
           Shop
-          {selectedMenu === "shop" && (
-            <hr
-              className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
+          {selectedMenu === "shop" && <hr className="hr" />}
         </li>
-        <li
-          onClick={() => setSelectedMenu("men")}
-          className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
-        >
+        <li onClick={() => setSelectedMenu("men")} className="li-big">
           Men
-          {selectedMenu === "men" && (
-            <hr
-              className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
+          {selectedMenu === "men" && <hr className="hr" />}
         </li>
-        <li
-          onClick={() => setSelectedMenu("women")}
-          className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
-        >
+        <li onClick={() => setSelectedMenu("women")} className="li-big">
           Women
-          {selectedMenu === "women" && (
-            <hr
-              className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
+          {selectedMenu === "women" && <hr className="hr" />}
         </li>
-        <li
-          onClick={() => setSelectedMenu("kids")}
-          className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
-        >
+        <li onClick={() => setSelectedMenu("kids")} className="li-big">
           Kids
-          {selectedMenu === "kids" && (
-            <hr
-              className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-            />
-          )}
+          {selectedMenu === "kids" && <hr className="hr" />}
         </li>
       </ul>
       <div
@@ -138,27 +106,25 @@ export function Navbar() {
             selectedMenu={selectedMenu}
             setSelectedMenu={setSelectedMenu}
             setIsMenuOpen={setIsMenuOpen}
+            handleClose={handleClose}
           />
         </div>
       </div>
     </div>
   );
 }
-function Hamburger({
-  setIsMenuOpen,
-  isMenuOpen,
-  selectedMenu,
-  setSelectedMenu,
-}) {
+function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu, handleClose }) {
   return (
     <div
-      className={`fixed  inset-0  translate-x-full lg:hidden
-      transition-transform duration-500 ${isMenuOpen && "translate-x-0 "}
+      className={`fixed  inset-0 transform lg:hidden
+      transition-transform duration-500 ${
+        isMenuOpen ? "translate-x-0" : "translate-x-full"
+      }
       `}
     >
       <div
         className="absolute top-0 right-0 w-[80%] h-full
-       bg-white z-50 p-4"
+       bg-white z-40 p-4"
       >
         <ul
           className="flex flex-col items-start gap-10
@@ -166,66 +132,51 @@ function Hamburger({
         font-monserat p-16 "
         >
           <li
-            onClick={() => setSelectedMenu("shop")}
-            className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
+            onClick={(e) => {
+              setSelectedMenu("shop");
+              handleClose(e);
+            }}
+            className="li-small"
           >
             Shop
-            {selectedMenu === "shop" && (
-              <hr
-                className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-              />
-            )}
+            {selectedMenu === "shop" && <hr className="hr" />}
           </li>
           <li
-            onClick={() => setSelectedMenu("men")}
-            className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
+            onClick={(e) => {
+              setSelectedMenu("men");
+              handleClose(e);
+            }}
+            className="li-small"
           >
             Men
-            {selectedMenu === "men" && (
-              <hr
-                className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-              />
-            )}
+            {selectedMenu === "men" && <hr className="hr" />}
           </li>
           <li
-            onClick={() => setSelectedMenu("women")}
-            className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
+            onClick={(e) => {
+              setSelectedMenu("women");
+              handleClose(e);
+            }}
+            className="li-small"
           >
             Women
-            {selectedMenu === "women" && (
-              <hr
-                className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-              />
-            )}
+            {selectedMenu === "women" && <hr className="hr" />}
           </li>
           <li
-            onClick={() => setSelectedMenu("kids")}
-            className="flex flex-col items-center
-           justify-center gap-1 cursor-pointer"
+            onClick={(e) => {
+              setSelectedMenu("kids");
+              handleClose(e);
+            }}
+            className="li-small"
           >
             Kids
-            {selectedMenu === "kids" && (
-              <hr
-                className="border-none w-[80%]
-          h-[3px] rounded-[10px] bg-red-500"
-              />
-            )}
+            {selectedMenu === "kids" && <hr className="hr" />}
           </li>
         </ul>
       </div>
       <div
-        onClick={(e) => {
-          e.preventDefault();
-          setIsMenuOpen(!isMenuOpen);
-        }}
-        className={`absolute top-0  right-0 h-full w-full z-40
-         bg-black inset-0 opacity-40 `}
+        onClick={handleClose}
+        className={`fixed top-0  right-0 h-full w-full 
+         bg-black  opacity-40 `}
       ></div>
     </div>
   );
