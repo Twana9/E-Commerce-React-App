@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { cartIcon, hamburger, logo } from "../../assets";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 export function Navbar() {
   const [selectedMenu, setSelectedMenu] = useState("shop");
@@ -62,19 +63,19 @@ export function Navbar() {
         font-monserat max-lg:hidden"
       >
         <li onClick={() => setSelectedMenu("shop")} className="li-big">
-          Shop
+          <Link to="/">Shop</Link>
           {selectedMenu === "shop" && <hr className="hr" />}
         </li>
         <li onClick={() => setSelectedMenu("men")} className="li-big">
-          Men
+          <Link to="/men">Men</Link>
           {selectedMenu === "men" && <hr className="hr" />}
         </li>
         <li onClick={() => setSelectedMenu("women")} className="li-big">
-          Women
+          <Link to="/women">Women</Link>
           {selectedMenu === "women" && <hr className="hr" />}
         </li>
         <li onClick={() => setSelectedMenu("kids")} className="li-big">
-          Kids
+          <Link to="/kids">Kids</Link>
           {selectedMenu === "kids" && <hr className="hr" />}
         </li>
       </ul>
@@ -82,25 +83,29 @@ export function Navbar() {
         className="flex 
        items-center gap-11 max-md:gap-8"
       >
-        <button
-          className="px-8 py-3 rounded-full border-[1px]
+        <Link to="/login">
+          <button
+            className="px-8 py-3 rounded-full border-[1px]
          border-slate-gray font-sans text-slate-600
          text-lg font-medium outline-none transition ease-in-out
           duration-75 active:bg-slate-100
          hover:bg-yellow-500 hover:border-yellow-500
           hover:text-white  max-lg:hidden"
-        >
-          Login
-        </button>
-        <img
-          src={cartIcon}
-          alt="cart"
-          height={45}
-          width={45}
-          className="object-contain cursor-pointer
+          >
+            Login
+          </button>
+        </Link>
+        <Link to="/cart">
+          <img
+            src={cartIcon}
+            alt="cart"
+            height={45}
+            width={45}
+            className="object-contain cursor-pointer
           max-md:h-[33px] max-md:w-[33px]
           max-lg:w-[40px] max-lg:h-[40px]"
-        />
+          />
+        </Link>
         <div
           className="w-6 h-6 flex justify-center items-center
           -ml-14 -mt-9 text-[16px] bg-red-500 text-white
@@ -155,7 +160,7 @@ function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu, handleClose }) {
             }}
             className="li-small"
           >
-            Shop
+            <Link to="/">Shop</Link>
             {selectedMenu === "shop" && <hr className="hr" />}
           </li>
           <li
@@ -165,7 +170,7 @@ function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu, handleClose }) {
             }}
             className="li-small"
           >
-            Men
+            <Link to="/men">Men</Link>
             {selectedMenu === "men" && <hr className="hr" />}
           </li>
           <li
@@ -175,7 +180,7 @@ function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu, handleClose }) {
             }}
             className="li-small"
           >
-            Women
+            <Link to="/women">Women</Link>
             {selectedMenu === "women" && <hr className="hr" />}
           </li>
           <li
@@ -185,8 +190,18 @@ function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu, handleClose }) {
             }}
             className="li-small"
           >
-            Kids
+            <Link to="/kids">Kids</Link>
             {selectedMenu === "kids" && <hr className="hr" />}
+          </li>
+          <li
+            onClick={(e) => {
+              setSelectedMenu("login");
+              handleClose(e);
+            }}
+            className="li-small"
+          >
+            <Link to="/login">Login</Link>
+            {selectedMenu === "login" && <hr className="hr" />}
           </li>
         </ul>
       </div>

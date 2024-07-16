@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./Components/Navbar/Navbar";
-import { LoginSignup, Product, Shop, ShopCategory } from "./Pages";
+import { Cart, LoginSignup, Product, Shop, ShopCategory } from "./Pages";
 
 function App() {
   return (
