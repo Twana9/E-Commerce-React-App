@@ -1,3 +1,9 @@
+import { Hero } from "../Components/Hero/Hero";
+
 export function Shop() {
-  return <h1>Shop</h1>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
