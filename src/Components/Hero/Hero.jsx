@@ -3,27 +3,31 @@ import "./Hero.css";
 export function Hero() {
   return (
     <div
-      className="hero flex items-center border border-red-500 
-       h-full max-container max-xl:bg-cyan-300 "
+      className="hero flex items-center 
+       h-full max-container
+       max-lg:flex-col max-lg:items-center overflow-hidden 
+       "
     >
       <div
         className="hero-left flex-1 flex flex-col p-24 gap-3
-      font-poppins lg:gap-1"
+      font-poppins max-xl:gap-1 max-lg:py-12  max-lg:gap-6
+      max-lg:items-center"
       >
         <h2
           className=" text-xl
-      font-[600]  text-[#302e2e]"
+      font-[600]  text-[#525151] max-sm:text-lg"
         >
           NEW ARRIVALS ONLY
         </h2>
         <div
           className="hero-txt flex flex-col -space-y-8
-        lg:-space-y-6"
+        max-xl:-space-y-6 max-lg:-space-y-4 "
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-lg:justify-center">
             <p
               className="text-[#090909] font-[600] text-[80px]
-            max-xl:text-[55px] max-xl:leading-relaxed"
+            max-xl:text-[55px] max-xl:leading-relaxed
+            max-lg:leading-loose  max-sm:text-[40px]"
             >
               new
             </p>
@@ -31,18 +35,22 @@ export function Hero() {
               src={handIcon}
               alt="hand emoji"
               width={100}
-              className="max-xl:w-[65px]"
+              className="max-xl:w-[64px] max-sm:w-[50px]"
             />
           </div>
           <p
             className="text-[#090909] font-[600] text-[80px] 
-          whitespace-nowrap max-xl:text-[55px] max-xl:leading-relaxed"
+          whitespace-nowrap max-xl:text-[55px] max-xl:leading-relaxed
+          max-lg:text-center max-lg:leading-loose
+           max-sm:text-[40px]"
           >
             collections
           </p>
           <p
             className="text-[#090909] font-[600] text-[80px] 
-          whitespace-nowrap max-xl:text-[55px] max-xl:leading-relaxed"
+          whitespace-nowrap max-xl:text-[55px] max-xl:leading-relaxed
+          max-lg:text-center max-lg:leading-loose
+           max-sm:text-[40px]"
           >
             for everyone
           </p>
@@ -51,7 +59,9 @@ export function Hero() {
           <div
             className="hero-btn flex justify-center items-center
           gap-3 bg-red-600 text-white font-medium text-lg
-          rounded-[75px] h-[60px] w-[270px] mt-7"
+          rounded-[75px] h-[60px] w-[270px] mt-7 max-xl:w-[230px] 
+          max-xl:h-[50px] max-sm:text-[16px]
+          max-sm:h-[45px]"
           >
             <div>Latest Collection</div>
             <img src={arrow} alt="arrow" />
@@ -64,7 +74,8 @@ export function Hero() {
           alt="image"
           height={550}
           width={500}
-          className="max-xl:w-[400px] max-xl:h-[450xp]"
+          className="max-xl:w-[400px] max-xl:h-[500px]
+          max-sm:w-[330px] max-sm:h-[430px]"
         />
       </div>
     </div>
