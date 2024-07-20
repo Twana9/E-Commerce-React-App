@@ -2,7 +2,7 @@ import { handIcon, arrow, heroImage } from "../../assets";
 import "./Hero.css";
 export function Hero() {
   return (
-    <div className="flex h-full max-container items-center">
+    <div className="hero flex items-center border border-red-500  h-full max-container ">
       <div
         className="hero-left flex-1 flex flex-col p-24 gap-3
       font-poppins"
@@ -13,7 +13,7 @@ export function Hero() {
         >
           NEW ARRIVALS ONLY
         </h2>
-        <div className="flex flex-col -space-y-8">
+        <div className="hero-txt flex flex-col -space-y-8">
           <div className="flex items-center gap-2">
             <p className="text-[#090909] font-[600] text-[80px]">new</p>
             <img src={handIcon} alt="hand emoji" width={100} />
