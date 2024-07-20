@@ -47,6 +47,11 @@
     margin-left: 50px;
   }
 }
+/* ///////////shop//////////////////// */
+.bg-hero {
+  background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+}
+/* /////////////////////////////////// */
 @layer components {
   .max-container {
     max-width: 1440px;

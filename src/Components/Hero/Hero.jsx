@@ -2,9 +2,9 @@ import { handIcon, arrow, heroImage } from "../../assets";
 import "./Hero.css";
 export function Hero() {
   return (
-    <div className="flex  h-full bg-hero ">
+    <div className="flex h-full max-container items-center">
       <div
-        className="hero-left flex-1 flex flex-col p-40 gap-3
+        className="hero-left flex-1 flex flex-col p-24 gap-3
       font-poppins"
       >
         <h2
