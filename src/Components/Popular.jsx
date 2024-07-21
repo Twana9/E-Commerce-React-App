@@ -4,7 +4,7 @@ export function Popular() {
   const [items, setItems] = useState(data_product);
 
   return (
-    <div>
+    <div className="max-container">
       <h1>Popular Products</h1>
       <hr />
       <div>
@@ -24,12 +24,24 @@ export function Popular() {
 }
 function Item(props) {
   return (
-    <div>
-      <img src={props.image} alt="product" />
-      <p>{props.name}</p>
-      <div>
-        <p>{props.new_price}</p>
-        <p>{props.old_price}</p>
+    <div className="w-[350px] font-poppins overflow-hidden ">
+      <img
+        src={props.image}
+        alt="product"
+        className="object-contain hover:scale-105
+    transition duration-500"
+      />
+      <p className="my-1.5 font-palanquin font-medium">{props.name}</p>
+      <div className="flex gap-5">
+        <p className="text-[#374151] text-[18px] font-[600]">
+          {props.new_price}
+        </p>
+        <p
+          className="text-[#8c8c8c] text-[18px] font-[500] 
+        line-through"
+        >
+          {props.old_price}
+        </p>
       </div>
     </div>
   );
