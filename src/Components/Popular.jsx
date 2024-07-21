@@ -5,9 +5,17 @@ export function Popular() {
 
   return (
     <div className="max-container">
-      <h1>Popular Products</h1>
-      <hr />
-      <div>
+      <h1
+        className="text-slate-600 font-semibold text-4xl font-palanquin
+      mb-8 max-md:text-[32px] max-md:leading-normal"
+      >
+        Popular Products
+      </h1>
+      <hr className="mb-16" />
+      <div
+        className="grid justify-items-center  grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2
+       max-md:grid-cols-1 gap-20"
+      >
         {items.map((item) => (
           <Item
             key={item.id}
@@ -24,10 +32,12 @@ export function Popular() {
 }
 function Item(props) {
   return (
-    <div className="w-[350px] font-poppins overflow-hidden ">
+    <div className="w-[300px] font-poppins overflow-hidden ">
       <img
         src={props.image}
         alt="product"
+        height={368}
+        width={300}
         className="object-contain hover:scale-105
     transition duration-500"
       />
