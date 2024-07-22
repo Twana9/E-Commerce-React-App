@@ -1,4 +1,5 @@
 import { Hero } from "../Components/Hero/Hero";
+import { NewCollections } from "../Components/NewCollections";
 import { Offers } from "../Components/Offers/Offers";
 import { Popular } from "../Components/Popular";
 
@@ -13,6 +14,9 @@ export function Shop() {
       </section>
       <section className="padding">
         <Offers />
+      </section>
+      <section className="padding">
+        <NewCollections />
       </section>
     </>
   );
