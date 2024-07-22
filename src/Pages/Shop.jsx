@@ -1,5 +1,5 @@
 import { Hero } from "../Components/Hero/Hero";
-import { Offers } from "../Components/Offers";
+import { Offers } from "../Components/Offers/Offers";
 import { Popular } from "../Components/Popular";
 
 export function Shop() {

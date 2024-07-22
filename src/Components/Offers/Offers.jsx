@@ -1,13 +1,14 @@
-import { exclusiveImage } from "../assets";
+import { exclusiveImage } from "../../assets";
+import "./Offers.css";
 
 export function Offers() {
   return (
     <div
-      className="flex items-center g bg-hero
-    h-[60vh] m-auto"
+      className="offers flex items-center gap-20 bg-hero
+    h-[60vh] m-auto max-container"
     >
       <div
-        className="flex-1 flex flex-col gap-8 p-16
+        className="offers-left flex-1 flex flex-col gap-12 p-20
       justify-center"
       >
         <h1
@@ -18,7 +19,7 @@ export function Offers() {
         </h1>
         <h1
           className="font-poppins text-[#171717] text-6xl
-        font-medium"
+        font-medium whitespace-nowrap"
         >
           Offers For You
         </h1>
@@ -29,13 +30,14 @@ export function Offers() {
           ONLY ON BEST SELLERS PRODUCTS
         </p>
         <button
-          className="w-[200px] h-12 bg-red-600 text-white
-        rounded-full font-palanquin text-xl"
+          className="w-[280px] h-14 bg-red-600 text-white
+        rounded-full font-palanquin text-xl font-medium border-none
+        hover:bg-red-700"
         >
           Check Now
         </button>
       </div>
-      <div className="flex-1 justify-center items-end">
+      <div className="offers-right flex-1 flex justify-center items-end pt-24">
         <img src={exclusiveImage} alt="bad picture" />
       </div>
     </div>
