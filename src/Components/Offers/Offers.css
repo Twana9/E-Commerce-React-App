@@ -1,16 +1,22 @@
 @media (min-width: 1280px) and (max-height: 900px) {
   .offers {
     overflow: hidden;
-    height: 74vh;
+    height: 75vh;
+    padding-top: 50px;
   }
   .offers-left {
     padding-top: 130px;
   }
   .offers-left h1 {
-    font-size: 60px;
-    line-height: 40px;
+    font-size: 58px;
+    line-height: 30px;
+    margin-top: -2px;
   }
-  /* .offers-right img {
-    padding-top: -px;
-  } */
+  .offers-left button {
+    margin-top: -10px;
+  }
+  .offers-right img {
+    height: 473px;
+    width: 300px;
+  }
 }
