@@ -1,3 +1,4 @@
+import { Footer } from "../Components/Footer";
 import { Hero } from "../Components/Hero/Hero";
 import { NewCollections } from "../Components/NewCollections";
 import { NewsLetter } from "../Components/NewsLetter";
@@ -21,6 +22,9 @@ export function Shop() {
       </section>
       <section className="padding">
         <NewsLetter />
+      </section>
+      <section className="padding-y">
+        <Footer />
       </section>
     </>
   );

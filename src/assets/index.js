@@ -6,6 +6,10 @@ import hamburger from "./hamburger.svg";
 import handIcon from "./hand_icon.png";
 import heroImage from "./hero_image.png";
 import exclusiveImage from "./exclusive_image.png";
+import FooterLogo from "./logo_big.png";
+import instagramIcon from "./instagram_icon.png";
+import pintesterIcon from "./pintester_icon.png";
+import whatsappIcon from "./whatsapp_icon.png";
 export {
   arrow,
   logoBig,
@@ -15,4 +19,8 @@ export {
   handIcon,
   heroImage,
   exclusiveImage,
+  FooterLogo,
+  instagramIcon,
+  pintesterIcon,
+  whatsappIcon,
 };
