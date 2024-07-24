@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   FooterLogo,
   instagramIcon,
@@ -9,19 +10,27 @@ export function Footer() {
   return (
     <div
       className="flex flex-col justify-center items-center 
-    gap-12 max-container font-poppins"
+    gap-12 max-container font-poppins p-10"
     >
-      <div className="flex items-center gap-12">
-        <img
-          src={FooterLogo}
-          alt="logo"
-          className="object-contain 
-        cursor-pointer"
-        />
-        <p className="text-4xl font-medium cursor-pointer">SHOPPING</p>
+      <div className="flex items-center gap-10 max-xl:gap-6">
+        <Link to="/">
+          <img
+            src={FooterLogo}
+            alt="logo"
+            className="object-contain 
+        cursor-pointer max-xl:h-16 max-xl:w-16"
+          />
+        </Link>
+        <p
+          className="text-4xl font-medium cursor-pointer
+        max-xl:text-3xl"
+        >
+          SHOPPING
+        </p>
       </div>
       <ul
-        className="flex items-center gap-7 text-[#494949]
+        className="flex items-center gap-16 text-[#919191]
+        max-xl:gap-10 max-lg:gap-8 max-md:gap-6
       "
       >
         <li className="cursor-pointer hover:text-pink-500 ">Company</li>
@@ -53,9 +62,14 @@ export function Footer() {
           <img src={whatsappIcon} alt="whatsapp" />
         </div>
       </div>
-      <div>
-        <hr />
-        <p>Copyright @ 2023 - All Right Reserved</p>
+      <div className="w-full flex flex-col items-center gap-6">
+        <hr
+          className="h-[3px] w-[90%] rounded-full bg-[#bebebe]
+        max-lg:w-full"
+        />
+        <p className="text-lg text-[#919191] ">
+          Copyright @ 2024 - All Right Reserved
+        </p>
       </div>
     </div>
   );
