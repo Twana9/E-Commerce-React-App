@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Cart, LoginSignup, Product, Shop, ShopCategory } from "./Pages";
 import { Footer } from "./Components/Footer";
+import { bannerKids, bannerMen, bannerWomen } from "./assets";
 
 function App() {
   return (
@@ -10,9 +11,18 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Shop />} />
-        <Route path="/men" element={<ShopCategory category="men" />} />
-        <Route path="/women" element={<ShopCategory category="women" />} />
-        <Route path="/kids" element={<ShopCategory category="kids" />} />
+        <Route
+          path="/men"
+          element={<ShopCategory banner={bannerMen} category="men" />}
+        />
+        <Route
+          path="/women"
+          element={<ShopCategory banner={bannerWomen} category="women" />}
+        />
+        <Route
+          path="/kids"
+          element={<ShopCategory banner={bannerKids} category="kids" />}
+        />
         <Route path="/product" element={<Product />}>
           <Route path=":productId" element={<Product />} />
         </Route>
