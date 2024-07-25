@@ -11,8 +11,9 @@ import instagramIcon from "./instagram_icon.png";
 import pintesterIcon from "./pintester_icon.png";
 import whatsappIcon from "./whatsapp_icon.png";
 import bannerKids from "./banner_kids.png";
-import bannerMen from ".banner_mens.png";
-import bannerWomen from "./banner_womens";
+import bannerMen from "./banner_mens.png";
+import bannerWomen from "./banner_women.png";
+import dropDownIcon from "./dropdown_icon.png";
 export {
   arrow,
   logoBig,
@@ -29,4 +30,5 @@ export {
   bannerKids,
   bannerMen,
   bannerWomen,
+  dropDownIcon,
 };
