@@ -3,7 +3,8 @@ import { Item } from "../Components/Item";
 import { useProduct } from "../Zustand/store";
 
 export function ShopCategory(props) {
-  const { Products } = useProduct();
+  const { products } = useProduct();
+  console.log(products);
   return (
     <div>
       <img src={props.banner} alt="banner" />
@@ -16,8 +17,9 @@ export function ShopCategory(props) {
         </div>
       </div>
       <div>
-        {Products.map((item, i) =>
-          props.category === item.category ? <Item key={i} {...item} /> : null
+        {products.map(
+          (item, i) =>
+            props.category === item.category && <Item key={i} {...item} />
         )}
       </div>
     </div>

@@ -19,8 +19,8 @@ export function NewCollections() {
         className="grid justify-items-center  grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2
        max-md:grid-cols-1 gap-20"
       >
-        {newCollections.map((item) => (
-          <Item {...item} />
+        {newCollections.map((item, i) => (
+          <Item {...item} key={i} />
         ))}
       </div>
     </div>
