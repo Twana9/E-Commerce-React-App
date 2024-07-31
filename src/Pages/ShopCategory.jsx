@@ -27,7 +27,7 @@ export function ShopCategory(props) {
           cursor-pointer max-sm:text-[12px] max-sm:px-4 max-sm:py-2
           max-sm:gap-1 max-sm:whitespace-nowrap"
         >
-          Sort by{" "}
+          Sort by
           <img
             src={dropDownIcon}
             alt="V"
@@ -43,6 +43,15 @@ export function ShopCategory(props) {
           (item) =>
             props.category === item.category && <Item key={item.id} {...item} />
         )}
+      </div>
+      <div className="padding-x my-24 flex justify-center items-center ">
+        <button
+          className="text-lg px-14 py-5 bg-gray-200
+         rounded-full border-none text-black hover:bg-gray-300
+         max-sm:px-10 max-sm:py-4 max-sm:text-base"
+        >
+          Explore More
+        </button>
       </div>
     </div>
   );
