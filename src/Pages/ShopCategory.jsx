@@ -44,7 +44,10 @@ export function ShopCategory(props) {
             props.category === item.category && <Item key={item.id} {...item} />
         )}
       </div>
-      <div className="padding-x my-24 flex justify-center items-center ">
+      <div
+        className="padding-x my-24 flex justify-center items-center 
+      max-md:my-20 max-sm:my-16"
+      >
         <button
           className="text-lg px-14 py-5 bg-gray-200
          rounded-full border-none text-black hover:bg-gray-300
