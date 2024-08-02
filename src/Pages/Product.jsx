@@ -1,3 +1,13 @@
+import { useParams } from "react-router-dom";
+import { useProduct } from "../Zustand/store";
+
 export function Product() {
-  return <h1>Product</h1>;
+  const products = useProduct((state) => state.products);
+  const { productId } = useParams();
+  const product = products.find((item) => item.id === Number(productId));
+  return (
+    <div>
+      <div>{product.id}</div>
+    </div>
+  );
 }
