@@ -26,17 +26,31 @@ export function ProductDisplay(props) {
           <p>(122)</p>
         </div>
         <div className="prices">
-          <div>{product.old_price}</div>
-          <div>{product.new_price}</div>
+          <div>{product.old_price}$</div>
+          <div>{product.new_price}$</div>
         </div>
         <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          obcaecati iste quisquam ut, ea distinctio facere at nobis,
-          exercitationem sapiente sit, magni vitae modi placeat?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          cumque sit quos harum tempore sapiente explicabo error repudiandae
+          magnam facilis.
         </div>
         <div>
           <h1>Select Size</h1>
+          <div className="all-si">
+            <div>S</div>
+            <div>M</div>
+            <div>L</div>
+            <div>XL</div>
+            <div>XXL</div>
+          </div>
         </div>
+        <button>ADD TO CART</button>
+        <p>
+          <span>Category :</span>Women, T-Shirt, Crop Top
+        </p>
+        <p>
+          <span>Tags :</span>Modern, Latest
+        </p>
       </div>
     </div>
   );
