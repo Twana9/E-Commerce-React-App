@@ -14,6 +14,8 @@ import bannerKids from "./banner_kids.png";
 import bannerMen from "./banner_mens.png";
 import bannerWomen from "./banner_women.png";
 import dropDownIcon from "./dropdown_icon.png";
+import starIcon from "./star_icon.png";
+import starDullIcon from "./star_dull_icon.png";
 export {
   arrow,
   logoBig,
@@ -31,4 +33,6 @@ export {
   bannerMen,
   bannerWomen,
   dropDownIcon,
+  starIcon,
+  starDullIcon,
 };

@@ -5,7 +5,7 @@ export function BreadScrum(props) {
   const { product } = props;
   return (
     <div className="flex items-center gap-2">
-      Home{" "}
+      Home
       <img src={arrow} alt=">" className="filter invert hue-rotate-180 h-3.5" />
       Shop
       <img src={arrow} alt=">" className="filter invert hue-rotate-180 h-3.5" />
