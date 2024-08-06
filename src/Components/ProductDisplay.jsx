@@ -3,13 +3,17 @@ import { starDullIcon, starIcon } from "../assets";
 export function ProductDisplay(props) {
   const { product } = props;
   return (
-    <div>
-      <div className="left">
-        <div className="image-list">
-          <img src={product.image} alt="item" />
-          <img src={product.image} alt="item" />
-          <img src={product.image} alt="item" />
-          <img src={product.image} alt="item" />
+    <div
+      className="flex  justify-center items-center gap-[10%] max-container
+      px-16 pb-10
+    "
+    >
+      <div className="left flex justify-center items-center">
+        <div className="image-list flex flex-col gap-1.5">
+          <img src={product.image} alt="item" className="h-20 w-20" />
+          <img src={product.image} alt="item" className="h-20 w-20" />
+          <img src={product.image} alt="item" className="h-20 w-20" />
+          <img src={product.image} alt="item" className="h-20 w-20" />
         </div>
         <div className="main-img">
           <img src={product.image} alt="main-item" />
