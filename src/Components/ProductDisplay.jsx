@@ -4,22 +4,28 @@ export function ProductDisplay(props) {
   const { product } = props;
   return (
     <div
-      className="flex  justify-center items-center gap-[10%] max-container
-      px-16 pb-10
-    "
+      className="flex  justify-center items-center gap-[10%] 
+      max-container px-16 pb-10"
     >
-      <div className="left flex justify-center items-center">
-        <div className="image-list flex flex-col gap-1.5">
-          <img src={product.image} alt="item" className="h-20 w-20" />
-          <img src={product.image} alt="item" className="h-20 w-20" />
-          <img src={product.image} alt="item" className="h-20 w-20" />
-          <img src={product.image} alt="item" className="h-20 w-20" />
+      <div
+        className="left flex  items-center 
+      w-[45%] gap-3"
+      >
+        <div className="image-list flex flex-col gap-2.5">
+          <img src={product.image} alt="item" className="h-28 w-24" />
+          <img src={product.image} alt="item" className="h-28 w-24" />
+          <img src={product.image} alt="item" className="h-28 w-24" />
+          <img src={product.image} alt="item" className="h-28 w-24" />
         </div>
         <div className="main-img">
-          <img src={product.image} alt="main-item" />
+          <img
+            src={product.image}
+            alt="main-item"
+            className="object-contain h-[480px]"
+          />
         </div>
       </div>
-      <div className="right">
+      <div className="right w-[45%]">
         <h1>{product.name}</h1>
         <div className="right-star">
           <img src={starIcon} alt="star" />
