@@ -1,12 +1,13 @@
-import { arrow, newArrow } from "../assets";
+import { newArrow } from "../assets";
 
 export function BreadScrum(props) {
   //disturcturing the props
   const { product } = props;
   return (
     <div
-      className="flex items-center gap-1 max-conter px-16 py-10
-    font-poppins text-sm tracking-tight max-container"
+      className="flex items-center gap-2 my-[60px] mx-[170px]
+    font-poppins text-base tracking-tight max-container
+    text-capitalize font-semibold text-[#5e5e5e]"
     >
       Home
       <img src={newArrow} alt=">" className="" />

@@ -4,28 +4,44 @@ export function ProductDisplay(props) {
   const { product } = props;
   return (
     <div
-      className="flex  justify-center items-center gap-[10%] 
-      max-container px-16 pb-10"
+      className="flex  my-0 mx-[170px] 
+      max-container "
     >
       <div
-        className="left flex  items-center 
-      w-[45%] gap-3"
+        className="left flex  
+       gap-[17px]"
       >
-        <div className="image-list flex flex-col gap-2.5">
-          <img src={product.image} alt="item" className="h-28 w-24" />
-          <img src={product.image} alt="item" className="h-28 w-24" />
-          <img src={product.image} alt="item" className="h-28 w-24" />
-          <img src={product.image} alt="item" className="h-28 w-24" />
+        <div className="image-list flex flex-col gap-4">
+          <img
+            src={product.image}
+            alt="item"
+            className="h-[150px] w-[140px] "
+          />
+          <img
+            src={product.image}
+            alt="item"
+            className="h-[150px] w-[140px] "
+          />
+          <img
+            src={product.image}
+            alt="item"
+            className="h-[150px] w-[140px] "
+          />
+          <img
+            src={product.image}
+            alt="item"
+            className="h-[150px] w-[140px] "
+          />
         </div>
         <div className="main-img">
           <img
             src={product.image}
             alt="main-item"
-            className="object-contain h-[480px]"
+            className="h-[648px] w-[630px]"
           />
         </div>
       </div>
-      <div className="right w-[45%]">
+      <div className="right">
         <h1>{product.name}</h1>
         <div className="right-star">
           <img src={starIcon} alt="star" />
