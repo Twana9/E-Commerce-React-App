@@ -15,35 +15,38 @@ export function ProductDisplay(props) {
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[140px] "
+            className="h-[150px] w-[180px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[140px] "
+            className="h-[150px] w-[180px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[140px] "
+            className="h-[150px] w-[180px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[140px] "
+            className="h-[150px] w-[180px] "
           />
         </div>
         <div className="main-img">
           <img
             src={product.image}
             alt="main-item"
-            className="h-[648px] w-[630px]"
+            className="h-[648px] w-[790px]"
           />
         </div>
       </div>
-      <div className="right">
-        <h1>{product.name}</h1>
-        <div className="right-star">
+      <div className="right flex flex-col mx-[70px] ">
+        <h1 className="text-[#3d3d3d] text-[40px] font-bold">{product.name}</h1>
+        <div
+          className="right-star flex gap-1.5 items-center 
+        text-base text-[#1c1c1c] mt-[13px]"
+        >
           <img src={starIcon} alt="star" />
           <img src={starIcon} alt="star" />
           <img src={starIcon} alt="star" />
