@@ -15,29 +15,29 @@ export function ProductDisplay(props) {
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[180px] "
+            className="h-[140px] w-[180px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[180px] "
+            className="h-[140px] w-[180px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[180px] "
+            className="h-[140px] w-[180px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[150px] w-[180px] "
+            className="h-[140px] w-[180px] "
           />
         </div>
         <div className="main-img">
           <img
             src={product.image}
             alt="main-item"
-            className="h-[648px] w-[790px]"
+            className="h-[608px] w-[790px]"
           />
         </div>
       </div>
@@ -54,11 +54,13 @@ export function ProductDisplay(props) {
           <img src={starDullIcon} alt="star_dull" />
           <p>(122)</p>
         </div>
-        <div className="prices">
-          <div>{product.old_price}$</div>
-          <div>{product.new_price}$</div>
+        <div className="flex gap-3 text-xl font-bold mt-10">
+          <div className="text-slate-gray line-through ">
+            {product.old_price}$
+          </div>
+          <div className="text-coral-red">{product.new_price}$</div>
         </div>
-        <div>
+        <div className="text-base text-slate-gray mt-7">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
           cumque sit quos harum tempore sapiente explicabo error repudiandae
           magnam facilis.
