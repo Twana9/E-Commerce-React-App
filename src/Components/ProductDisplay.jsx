@@ -15,29 +15,29 @@ export function ProductDisplay(props) {
           <img
             src={product.image}
             alt="item"
-            className="h-[140px] w-[180px] "
+            className="h-[131px] w-[200px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[140px] w-[180px] "
+            className="h-[131px] w-[200px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[140px] w-[180px] "
+            className="h-[131px] w-[200px] "
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[140px] w-[180px] "
+            className="h-[131px] w-[200px] "
           />
         </div>
         <div className="main-img">
           <img
             src={product.image}
             alt="main-item"
-            className="h-[608px] w-[790px]"
+            className="h-[574px] w-[890px]"
           />
         </div>
       </div>
@@ -66,21 +66,71 @@ export function ProductDisplay(props) {
           magnam facilis.
         </div>
         <div>
-          <h1>Select Size</h1>
-          <div className="all-si">
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XXL</div>
+          <h1
+            className="mt-10 text-lg text-slate-gray font-semibold
+          "
+          >
+            Select Size
+          </h1>
+          <div
+            className="flex gap-3 mt-4 text-sm text-slate-gray
+          font-bold"
+          >
+            <div
+              className="flex justify-center items-center h-9 w-10
+             border border-slate-200 bg-slate-50 rounded-sm
+              shadow-sm hover:bg-slate-100 cursor-pointer 
+              hover:shadow-lg"
+            >
+              S
+            </div>
+            <div
+              className="flex justify-center items-center h-9 w-10
+             border border-slate-200 bg-slate-50 rounded-sm
+              shadow-sm hover:bg-slate-100 cursor-pointer 
+              hover:shadow-lg"
+            >
+              M
+            </div>
+            <div
+              className="flex justify-center items-center h-9 w-10
+             border border-slate-200 bg-slate-50 rounded-sm
+              shadow-sm hover:bg-slate-100 cursor-pointer 
+              hover:shadow-lg"
+            >
+              L
+            </div>
+            <div
+              className="flex justify-center items-center h-9 w-10
+             border border-slate-200 bg-slate-50 rounded-sm
+              shadow-sm hover:bg-slate-100 cursor-pointer 
+              hover:shadow-lg"
+            >
+              XL
+            </div>
+            <div
+              className="flex justify-center items-center h-9 w-10
+             border border-slate-200 bg-slate-50 rounded-sm
+              shadow-sm hover:bg-slate-100 cursor-pointer 
+              hover:shadow-lg"
+            >
+              XXL
+            </div>
           </div>
         </div>
-        <button>ADD TO CART</button>
-        <p>
-          <span>Category :</span>Women, T-Shirt, Crop Top
+        <button
+          className="border text-base h-12 w-48 mt-5 font-semibold
+        text-white bg-red-500 hover:bg-red-700 shadow-md"
+        >
+          ADD TO CART
+        </button>
+        <p className="text-lg text-slate-gray mt-10">
+          <span className="text-black font-semibold">Category :</span> Unknown,
+          T-Shirt, Crop Top
         </p>
-        <p>
-          <span>Tags :</span>Modern, Latest
+        <p className="text-lg text-slate-gray mt-2">
+          <span className="text-black font-semibold">Tags :</span> Modern,
+          Latest
         </p>
       </div>
     </div>
