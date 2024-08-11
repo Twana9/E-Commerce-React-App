@@ -8,7 +8,9 @@ export function BreadScrum(props) {
       className="flex items-center gap-2 my-[60px] mx-[130px]
     font-poppins text-base tracking-tight max-container
     text-capitalize font-semibold text-[#5e5e5e]
-    max-xl:mx-[60px] max-xl:my-[40px]"
+    max-xl:mx-[60px] max-xl:my-[40px]
+     max-sm:my-[20px] max-sm:mx-[30px]
+    max-sm:flex-wrap"
     >
       Home
       <img src={newArrow} alt=">" className="" />

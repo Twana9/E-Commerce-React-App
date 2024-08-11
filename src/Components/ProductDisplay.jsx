@@ -6,39 +6,46 @@ export function ProductDisplay(props) {
     <div
       className="flex  my-0 mx-[130px] 
       max-container max-xl:mx-[60px]
-      max-lg:flex-col "
+      max-lg:flex-col 
+      max-sm:mx-[30px]"
     >
       <div
         className="left flex  
-       gap-[17px] max-xl:gap-[10px] max-lg:gap-[15px]"
+       gap-[17px] max-xl:gap-[10px] max-lg:gap-[15px]
+       max-sm:gap-[8px] "
       >
         <div
           className="image-list flex flex-col gap-4
-        max-xl:gap-[10px] max-lg:gap-[15px]"
+        max-xl:gap-[10px] max-lg:gap-[15px]
+        max-sm:gap-[8px]"
         >
           <img
             src={product.image}
             alt="item"
             className="h-[131px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] "
+            max-xl:h-[111px] max-lg:w-[100px] 
+            max-sm:h-[75px] max-sm:w-[50px]"
           />
           <img
             src={product.image}
             alt="item"
             className="h-[131px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] "
+            max-xl:h-[111px] max-lg:w-[100px] 
+            max-sm:h-[75px] max-sm:w-[50px]"
           />
           <img
             src={product.image}
             alt="item"
             className="h-[131px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] "
+            max-xl:h-[111px] max-lg:w-[100px] 
+            max-sm:h-[75px] max-sm:w-[50px]"
           />
           <img
             src={product.image}
             alt="item"
             className="h-[131px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] "
+            max-xl:h-[111px] max-lg:w-[100px] 
+            max-sm:h-[75px] max-sm:w-[50px]"
           />
         </div>
         <div className="main-img">
@@ -47,7 +54,8 @@ export function ProductDisplay(props) {
             alt="main-item"
             className="h-[574px] w-[890px]
             max-xl:h-[473px] max-xl:w-[700px]
-            max-lg:w-[400px] max-lg:h-[488px]"
+            max-lg:w-[400px] max-lg:h-[488px]
+            max-sm:w-[200px] max-sm:h-[324px]"
           />
         </div>
       </div>
@@ -57,7 +65,8 @@ export function ProductDisplay(props) {
       >
         <h1
           className="text-[#3d3d3d] text-[40px] font-bold
-        min-w-[418px] max-xl:text-3xl"
+        min-w-[418px] max-xl:text-3xl
+        max-sm:text-lg max-sm:min-w-[270px]"
         >
           {product.name}
         </h1>
@@ -75,7 +84,7 @@ export function ProductDisplay(props) {
         </div>
         <div
           className="flex gap-3 text-xl font-bold mt-10
-        max-xl:mt-6"
+        max-xl:mt-6 max-sm:text-lg max-sm:mt-5"
         >
           <div className="text-slate-gray line-through ">
             {product.old_price}$
@@ -144,18 +153,23 @@ export function ProductDisplay(props) {
         </div>
         <button
           className="border text-base h-12 w-48 mt-5 font-semibold
-        text-white bg-red-500 hover:bg-red-700 shadow-md"
+        text-white bg-red-500 hover:bg-red-700 shadow-md
+        max-sm:border-red-600 "
         >
           ADD TO CART
         </button>
         <p
           className="text-lg text-slate-gray mt-10 max-xl:mt-4
-        max-lg:mt-8"
+        max-lg:mt-8 
+        max-sm:text-base max-sm:tracking-tight max-sm:mt-5"
         >
           <span className="text-black font-semibold">Category :</span> Unknown,
           T-Shirt, Crop Top
         </p>
-        <p className="text-lg text-slate-gray mt-2 max-xl:mt-1">
+        <p
+          className="text-lg text-slate-gray mt-2 max-xl:mt-1 
+        max-sm:text-base max-sm:tracking-tight"
+        >
           <span className="text-black font-semibold">Tags :</span> Modern,
           Latest
         </p>
