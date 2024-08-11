@@ -83,7 +83,7 @@ export function ProductDisplay(props) {
           <p>(122)</p>
         </div>
         <div
-          className="flex gap-3 text-xl font-bold mt-10
+          className="flex gap-3 text-xl font-bold mt-7
         max-xl:mt-6 max-sm:text-lg max-sm:mt-5"
         >
           <div className="text-slate-gray line-through ">
@@ -92,15 +92,15 @@ export function ProductDisplay(props) {
           <div className="text-coral-red">{product.new_price}$</div>
         </div>
         <div
-          className="text-base text-slate-gray mt-7
+          className="text-base text-slate-gray mt-6
         max-xl:mt-3"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          cumque sit quos harum tempore sapiente explicabo
+          good quality clothe, the clothe has been desigined with love and care,
+          and remember its original.
         </div>
         <div>
           <h1
-            className="mt-10 text-lg text-slate-gray font-semibold
+            className="mt-7 text-lg text-slate-gray font-semibold
            max-xl:mt-5"
           >
             Select Size
@@ -159,7 +159,7 @@ export function ProductDisplay(props) {
           ADD TO CART
         </button>
         <p
-          className="text-lg text-slate-gray mt-10 max-xl:mt-4
+          className="text-lg text-slate-gray mt-7 max-xl:mt-4
         max-lg:mt-8 
         max-sm:text-base max-sm:tracking-tight max-sm:mt-5"
         >

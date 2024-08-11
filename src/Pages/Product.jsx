@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useProduct } from "../Zustand/store";
 import { BreadScrum } from "../Components/BreadScrum";
 import { ProductDisplay } from "../Components/ProductDisplay";
+import { DescriptionBox } from "../Components/DescriptionBox";
 
 export function Product() {
   const products = useProduct((state) => state.products);
@@ -11,6 +12,7 @@ export function Product() {
     <div>
       <BreadScrum product={product} />
       <ProductDisplay product={product} />
+      <DescriptionBox />
     </div>
   );
 }
