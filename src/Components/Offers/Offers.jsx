@@ -7,22 +7,24 @@ export function Offers() {
       className="offers flex items-center gap-20  bg-hero
     h-[60vh] m-auto max-container max-xl:gap-14
     max-lg:h-[90vh] max-lg:flex-col 
-    max-lg:gap-5 max-sm:overflow-hidden"
+    max-lg:gap-5 max-sm:overflow-hidden 
+    max-lg:overflow-hidden"
     >
       <div
         className="offers-left flex-1 flex flex-col gap-12 p-20
-      justify-center max-xl:gap-6 max-lg:items-center max-sm:gap-1"
+      justify-center max-xl:gap-6 max-lg:items-center max-sm:gap-1
+      max-lg:gap-2"
       >
         <h1
           className="font-poppins text-[#171717] text-6xl
-        font-medium max-xl:text-4xl max-md:2xl 
+        font-medium max-xl:text-4xl max-lg:text-[38px] max-md:2xl 
         max-xl:leading-10 max-sm:text-3xl"
         >
           Exclusive
         </h1>
         <h1
           className="font-poppins text-[#171717] text-6xl
-        font-medium whitespace-nowrap max-xl:text-4xl max-md:2xl  
+        font-medium whitespace-nowrap max-xl:text-4xl max-lg:text-[38px] max-md:2xl  
         max-xl:leading-10 max-lg:mb-5 max-sm:text-3xl"
         >
           Offers For You
@@ -30,7 +32,7 @@ export function Offers() {
         <p
           className="font-poppins text-slate-700 text-xl
         font-medium max-xl:text-lg max-xl:mt-5 max-sm:text-sm
-        max-sm:mt-1 whitespace-nowrap"
+        max-sm:mt-1 whitespace-nowrap max-lg:mt-0.5"
         >
           ONLY ON BEST SELLERS PRODUCTS
         </p>
@@ -38,7 +40,7 @@ export function Offers() {
           className="w-[280px] h-14 bg-red-600 text-white
         rounded-full font-palanquin text-xl font-medium border-none
         hover:bg-red-700 max-xl:mt-6 max-sm:w-[200px] max-sm:h-10
-        max-sm:text-lg"
+        max-sm:text-lg max-lg:mt-0.5"
         >
           Check Now
         </button>

@@ -5,7 +5,7 @@ export function BreadScrum(props) {
   const { product } = props;
   return (
     <div
-      className="flex items-center gap-2 my-[60px] mx-[130px]
+      className="flex items-center gap-2 my-[60px] mx-[100px]
     font-poppins text-base tracking-tight max-container
     text-capitalize font-semibold text-[#5e5e5e]
     max-xl:mx-[60px] max-xl:my-[40px]

@@ -4,7 +4,7 @@ export function ProductDisplay(props) {
   const { product } = props;
   return (
     <div
-      className="flex  my-0 mx-[130px] 
+      className="flex  my-0 mx-[100px] 
       max-container max-xl:mx-[60px]
       max-lg:flex-col 
       max-sm:mx-[15px]"
