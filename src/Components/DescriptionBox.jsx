@@ -2,7 +2,7 @@ export function DescriptionBox() {
   return (
     <div
       className="mx-[130px] my-[80px] font-palanquin
-     text-slate-gray max-xl:mx-[60px] max-sm:mx-[30px]
+     text-slate-gray max-xl:mx-[60px] max-sm:mx-[15px]
       max-sm:my-[60px]"
     >
       <div className="flex text-lg font-semibold max-sm:text-sm">

@@ -7,7 +7,7 @@ export function ProductDisplay(props) {
       className="flex  my-0 mx-[130px] 
       max-container max-xl:mx-[60px]
       max-lg:flex-col 
-      max-sm:mx-[30px]"
+      max-sm:mx-[15px]"
     >
       <div
         className="left flex  
@@ -22,40 +22,40 @@ export function ProductDisplay(props) {
           <img
             src={product.image}
             alt="item"
-            className="h-[131px] w-[200px] 
+            className="h-[125px] w-[200px] 
             max-xl:h-[111px] max-lg:w-[100px] 
-            max-sm:h-[75px] max-sm:w-[50px]"
+            max-sm:h-[74px] max-sm:w-[55px]"
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[131px] w-[200px] 
+            className="h-[125px] w-[200px] 
             max-xl:h-[111px] max-lg:w-[100px] 
-            max-sm:h-[75px] max-sm:w-[50px]"
+            max-sm:h-[74px] max-sm:w-[55px]"
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[131px] w-[200px] 
+            className="h-[125px] w-[200px] 
             max-xl:h-[111px] max-lg:w-[100px] 
-            max-sm:h-[75px] max-sm:w-[50px]"
+            max-sm:h-[74px] max-sm:w-[55px]"
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[131px] w-[200px] 
+            className="h-[125px] w-[200px] 
             max-xl:h-[111px] max-lg:w-[100px] 
-            max-sm:h-[75px] max-sm:w-[50px]"
+            max-sm:h-[74px] max-sm:w-[55px]"
           />
         </div>
         <div className="main-img">
           <img
             src={product.image}
             alt="main-item"
-            className="h-[574px] w-[890px]
+            className="h-[550px] w-[890px]
             max-xl:h-[473px] max-xl:w-[700px]
             max-lg:w-[400px] max-lg:h-[488px]
-            max-sm:w-[200px] max-sm:h-[324px]"
+            max-sm:w-[250px] max-sm:h-[320px]"
           />
         </div>
       </div>
