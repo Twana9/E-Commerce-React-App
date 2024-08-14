@@ -5,21 +5,24 @@ export const useProduct = create((set) => ({
 }));
 
 export const useCart = create((set) => ({
-  cart: productDefaultNumber(),
-  addToCart: (itemId) =>
-    set((state) => ({
-      cart: [...state.cart, itemId],
-    })),
+  cart: getDefaultCart(),
+  addToCart: (itemId) => {
+    set((state) => {
+      const updatedCart = { ...state.cart, [itemId]: state.cart[itemId] + 1 };
+      console.log(updatedCart); // Log the updated cart here
+      return { cart: updatedCart };
+    });
+  },
   removeFromCart: (itemId) =>
     set((state) => ({
-      cart: state.cart.filter((item) => item.id !== itemId),
+      cart: { ...state.cart, [itemId]: state.cart[itemId] - 1 },
     })),
 }));
-function productDefaultNumber() {
+function getDefaultCart() {
   let cart = {};
-  for (let index = 0; index < all_product.length; index++) {
+  for (let index = 0; index < all_product.length + 1; index++) {
     cart[index] = 0;
   }
-  console.log(cart);
+
   return cart;
 }

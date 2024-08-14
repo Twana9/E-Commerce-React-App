@@ -1,6 +1,7 @@
 import { starDullIcon, starIcon } from "../assets";
-
+import { useCart } from "../Zustand/store";
 export function ProductDisplay(props) {
+  const addToCart = useCart((state) => state.addToCart);
   const { product } = props;
   return (
     <div
@@ -152,6 +153,7 @@ export function ProductDisplay(props) {
           </div>
         </div>
         <button
+          onClick={addToCart(product.id)}
           className="border text-base h-12 w-48 mt-5 font-semibold
         text-white bg-red-500 hover:bg-red-700 shadow-md
         max-sm:border-red-600 "
