@@ -1,5 +1,5 @@
 import { removeIcon } from "../assets";
-import all_product from "../assets/all_product";
+
 import { useCart, useProduct } from "../Zustand/store";
 
 export function CartItems() {
@@ -19,7 +19,7 @@ export function CartItems() {
         <p>Remove</p>
       </div>
       <hr />
-      {all_product.map((item) => {
+      {products.map((item) => {
         if (cart[item.id] > 0)
           return (
             <div key={item.id}>
@@ -30,7 +30,7 @@ export function CartItems() {
                 <button>{cart[item.id]}</button>
                 <p>{item.new_price * cart[item.id]}</p>
                 <img
-                  onClick={() => removeFromCart()}
+                  onClick={() => removeFromCart(item.id)}
                   src={removeIcon}
                   alt="X"
                 />
