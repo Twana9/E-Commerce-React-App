@@ -17,6 +17,7 @@ import dropDownIcon from "./dropdown_icon.png";
 import starIcon from "./star_icon.png";
 import starDullIcon from "./star_dull_icon.png";
 import newArrow from "./new-arrow.png";
+import removeIcon from "./cart_cross_icon.png";
 export {
   arrow,
   logoBig,
@@ -37,4 +38,5 @@ export {
   starIcon,
   starDullIcon,
   newArrow,
+  removeIcon,
 };

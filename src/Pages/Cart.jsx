@@ -1,3 +1,9 @@
+import { CartItems } from "../Components/CartItems";
+
 export function Cart() {
-  return <h1>Cart</h1>;
+  return (
+    <div>
+      <CartItems />
+    </div>
+  );
 }
