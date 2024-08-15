@@ -1,11 +1,12 @@
 import { removeIcon } from "../assets";
+import all_product from "../assets/all_product";
 import { useCart, useProduct } from "../Zustand/store";
 
 export function CartItems() {
   const { products } = useProduct();
   const { cart, removeFromCart } = useCart((state) => ({
     cart: state.cart,
-    removeFromCart: state.removeFromCart(),
+    removeFromCart: state.removeFromCart,
   }));
   return (
     <div>
@@ -18,17 +19,26 @@ export function CartItems() {
         <p>Remove</p>
       </div>
       <hr />
-      <div>
-        <div>
-          <img src="" alt="" />
-          <p></p>
-          <p></p>
-          <button></button>
-          <p></p>
-          <img onClick={() => removeFromCart()} src={removeIcon} alt="" />
-        </div>
-        <hr />
-      </div>
+      {all_product.map((item) => {
+        if (cart[item.id] > 0)
+          return (
+            <div key={item.id}>
+              <div>
+                <img src={item.image} alt="item" />
+                <p>{item.name}</p>
+                <p>{item.new_price}</p>
+                <button>{cart[item.id]}</button>
+                <p>{item.new_price * cart[item.id]}</p>
+                <img
+                  onClick={() => removeFromCart()}
+                  src={removeIcon}
+                  alt="X"
+                />
+              </div>
+              <hr />
+            </div>
+          );
+      })}
     </div>
   );
 }
