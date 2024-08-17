@@ -5,9 +5,10 @@ import { useCart, useProduct } from "../Zustand/store";
 export function CartItems() {
   const [promo, setPromo] = useState("");
   const { products } = useProduct();
-  const { cart, removeFromCart } = useCart((state) => ({
+  const { cart, removeFromCart, getTotalCartAmount } = useCart((state) => ({
     cart: state.cart,
     removeFromCart: state.removeFromCart,
+    getTotalCartAmount: state.getTotalCartAmount,
   }));
   return (
     <div className="flex flex-col padding-x max-container">
@@ -85,7 +86,7 @@ export function CartItems() {
           <div className="text-base text-slate-gray">
             <div className="flex justify-between py-3">
               <p>Subtotal</p>
-              <p>{0}$</p>
+              <p>{getTotalCartAmount()}$</p>
             </div>
             <hr className="h-[2px] bg-[#e2e2e2] border-none" />
             <div className="flex justify-between py-3">
@@ -98,7 +99,7 @@ export function CartItems() {
             font-semibold"
             >
               <p>Total</p>
-              <p>{0}$</p>
+              <p>{getTotalCartAmount()}$</p>
             </div>
             <hr className="h-[2px] bg-[#e2e2e2] border-none" />
           </div>
