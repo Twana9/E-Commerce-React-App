@@ -55,31 +55,55 @@ export function CartItems() {
           );
         return null;
       })}
-      <div>
-        <div>
-          <h1>Cart Totals</h1>
-          <div>
-            <div>
+      <div className="flex mt-12 font-poppins">
+        <div className="flex-1 flex flex-col gap-10 mr-52">
+          <h1 className="text-xl font-semibold">Cart Totals</h1>
+          <div className="text-base text-slate-gray">
+            <div className="flex justify-between py-3">
               <p>Subtotal</p>
               <p>{0}$</p>
             </div>
-            <div>
+            <hr className="h-[2px] bg-[#e2e2e2] border-none" />
+            <div className="flex justify-between py-3">
               <p>Shipping Fee</p>
               <p>Free</p>
             </div>
-            <div>
+            <hr className="h-[2px] bg-[#e2e2e2] border-none" />
+            <div
+              className="flex justify-between py-3 text-black
+            font-semibold"
+            >
               <p>Total</p>
               <p>{0}$</p>
             </div>
+            <hr className="h-[2px] bg-[#e2e2e2] border-none" />
           </div>
-          .<button>PROCEED TO CHECKOUT</button>
+          <button
+            className="bg-red-500 h-12 w-64 text-white
+          outline-none border-none active:bg-red-700 hover:shadow-3xl"
+          >
+            PROCEED TO CHECKOUT
+          </button>
         </div>
-      </div>
-      <div>
-        <p>if you have a promo code, Enter it here</p>
-        <div>
-          <input type="text" placeholder="promo code" />
-          <button>Submit</button>
+        <div className="flex-1 ">
+          <p className="text-sm text-slate-gray mb-3">
+            if you have a promo code, Enter it here
+          </p>
+          <div className="flex items-center">
+            <input
+              type="text"
+              placeholder="promo code"
+              className="bg-[#ececec] px-3 py-4  w-[300px] text-sm
+              rounded-lg outline-none"
+            />
+            <button
+              className="bg-black outline-none border-none text-white
+            text-sm px-3 py-4 rounded-lg -ml-3 transition-all active:bg-[#383636]
+             duration-[0.5s] active:shadow-2xl "
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </div>
     </div>
