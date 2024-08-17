@@ -23,29 +23,33 @@ export function ProductDisplay(props) {
           <img
             src={product.image}
             alt="item"
-            className="h-[125px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] 
+            className="h-[112px]   w-[200px] 
+            max-xl:h-[103px] max-xl:w-[150px] 
+            max-lg:w-[100px] max-lg:h-[111px]
             max-sm:h-[74px] max-sm:w-[55px]"
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[125px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] 
+            className="h-[112px] w-[200px] 
+            max-xl:h-[103px] max-xl:w-[150px] 
+            max-lg:w-[100px] max-lg:h-[111px]
             max-sm:h-[74px] max-sm:w-[55px]"
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[125px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] 
+            className="h-[112px] w-[200px] 
+            max-xl:h-[103px] max-xl:w-[150px]  
+            max-lg:w-[100px] max-lg:h-[111px]
             max-sm:h-[74px] max-sm:w-[55px]"
           />
           <img
             src={product.image}
             alt="item"
-            className="h-[125px] w-[200px] 
-            max-xl:h-[111px] max-lg:w-[100px] 
+            className="h-[112px] w-[200px] 
+            max-xl:h-[103px] max-xl:w-[150px] 
+             max-lg:w-[100px] max-lg:h-[111px]
             max-sm:h-[74px] max-sm:w-[55px]"
           />
         </div>
@@ -53,8 +57,8 @@ export function ProductDisplay(props) {
           <img
             src={product.image}
             alt="main-item"
-            className="h-[550px] w-[890px]
-            max-xl:h-[473px] max-xl:w-[700px]
+            className="h-[496px] w-[890px]
+            max-xl:h-[441px] max-xl:w-[600px]
             max-lg:w-[400px] max-lg:h-[488px]
             max-sm:w-[250px] max-sm:h-[320px]"
           />

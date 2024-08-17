@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 export function LoginSignup() {
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    hasAccount: false,
+  });
+
   return (
     <div
       className="bg-[#fde1ff] w-full h-[90vh] flex justify-center 
@@ -20,6 +29,8 @@ export function LoginSignup() {
         gap-5 max-sm:gap-5"
         >
           <input
+            value={userData.name}
+            onChange={(e) => setUserData({ ...userData, name: e.target.value })}
             className="w-[95%] h-10 border border-0.5 px-5 
              border-slate-300 text-sm rounded-lg outline-none
              focus:ring-1 focus:ring-slate-400 shadow-sm max-sm:h-9
@@ -28,6 +39,10 @@ export function LoginSignup() {
             placeholder="Your Name"
           />
           <input
+            value={userData.email}
+            onChange={(e) =>
+              setUserData({ ...userData, email: e.target.value })
+            }
             className="w-[95%] h-10 border border-0.5 px-5 
              border-slate-300 text-sm rounded-lg outline-none
              focus:ring-1 focus:ring-slate-400 shadow-sm max-sm:h-9
@@ -36,6 +51,10 @@ export function LoginSignup() {
             placeholder="Email Address"
           />
           <input
+            value={userData.password}
+            onChange={(e) =>
+              setUserData({ ...userData, password: e.target.value })
+            }
             className="w-[95%] h-10 border border-0.5 px-5 
              border-slate-300 text-sm rounded-lg outline-none
              focus:ring-1 focus:ring-slate-400 shadow-sm max-sm:h-9
@@ -60,7 +79,14 @@ export function LoginSignup() {
           <span className="text-red-500">Login here</span>
         </p>
         <div className="flex gap-2 ml-[11px] max-xl:items-start">
-          <input type="checkbox" className="max-xl:mt-1" />
+          <input
+            checked={userData.hasAccount}
+            onChange={(e) =>
+              setUserData({ ...userData, hasAccount: e.target.checked })
+            }
+            type="checkbox"
+            className="max-xl:mt-1"
+          />
           <p
             className="text-[15px] text-slate-gray
            whitespace-nowrap tracking-tight 
