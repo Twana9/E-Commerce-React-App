@@ -17,7 +17,9 @@ export function CartItems() {
        font-semibold text-lg 
        max-xl:grid-cols-[0.6fr_2.75fr_0.75fr_0.7fr_0.75fr_0.7fr]
        max-lg:text-base max-lg:gap-[30px]
-       max-md:gap-[15px] max-md:text-sm"
+       max-md:gap-[15px] max-md:text-sm 
+       max-sm:text-[11px] max-sm:mt-3 max-sm:gap-[11px]
+       max-sm:tracking-tighter"
       >
         <p>Products</p>
         <p>Title</p>
@@ -39,19 +41,24 @@ export function CartItems() {
                  font-poppins text-slate-gray 
                  max-xl:grid-cols-[0.6fr_2.75fr_0.75fr_0.7fr_0.75fr_0.7fr]
                  max-lg:text-sm max-lg:gap-[30px]
-                 max-md:gap-[18px] max-md:text-xs
+                 max-md:gap-[18px] max-md:text-xs 
+                  max-sm:gap-[15px]
+                 max-sm:text-[12px]
+                 max-sm:grid-cols-[0.75fr_2.75fr_0.75fr_0.7fr_0.75fr_0.7fr]
                  "
               >
                 <img
-                  className="h-[62px] max-md:h-[45px]"
+                  className="h-[62px] max-md:h-[45px] max-sm:h-[37px]"
                   src={item.image}
                   alt="item"
                 />
-                <p>{item.name}</p>
+                <p className="max-sm:tracking-tight max-sm:text-center">
+                  {item.name}
+                </p>
                 <p>{item.new_price}$</p>
                 <button
                   className="border-[1px] border-slate-200
-                 h-8 w-10"
+                 h-8 w-10 max-sm:h-6 max-sm:w-8"
                 >
                   {cart[item.id]}
                 </button>
