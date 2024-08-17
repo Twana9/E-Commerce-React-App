@@ -38,9 +38,19 @@ export const useCart = create((set, get) => ({
     }
     return totalAmount;
   },
+  getTotalItems: () => {
+    const { cart } = get();
+    let totalItems = 0;
+    for (let item in cart) {
+      if (cart[item] > 0) {
+        totalItems += cart[item];
+      }
+    }
+    return totalItems;
+  },
 }));
 
-////
+///////////cart///////////////////////////////////////////////////
 function getDefaultCart() {
   let cart = {};
   for (let index = 0; index < all_product.length + 1; index++) {

@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { cartIcon, hamburger, logo } from "../../assets";
 import { Link } from "react-router-dom";
+import { useCart } from "../../Zustand/store";
 import "./Navbar.css";
 export function Navbar() {
   const [selectedMenu, setSelectedMenu] = useState("shop");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { getTotalItems } = useCart((state) => ({
+    getTotalItems: state.getTotalItems,
+  }));
   function handleClick() {
     setIsMenuOpen(true);
   }
@@ -112,7 +116,7 @@ export function Navbar() {
           cursor-pointer rounded-xl max-md:h-[18px] max-md:w-[18px]
           max-md:-ml-[45px] max-md:-mt-7 max-md:text-[12px]"
         >
-          0
+          {getTotalItems()}
         </div>
         <div className="lg:hidden" onClick={handleClick}>
           <img
