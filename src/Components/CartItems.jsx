@@ -16,7 +16,8 @@ export function CartItems() {
        mt-5 place-items-center gap-[75px] py-5 text-[#454545]
        font-semibold text-lg 
        max-xl:grid-cols-[0.6fr_2.75fr_0.75fr_0.7fr_0.75fr_0.7fr]
-       max-lg:text-base max-lg:gap-[30px]"
+       max-lg:text-base max-lg:gap-[30px]
+       max-md:gap-[15px] max-md:text-sm"
       >
         <p>Products</p>
         <p>Title</p>
@@ -38,9 +39,14 @@ export function CartItems() {
                  font-poppins text-slate-gray 
                  max-xl:grid-cols-[0.6fr_2.75fr_0.75fr_0.7fr_0.75fr_0.7fr]
                  max-lg:text-sm max-lg:gap-[30px]
+                 max-md:gap-[18px] max-md:text-xs
                  "
               >
-                <img className="h-[62px]" src={item.image} alt="item" />
+                <img
+                  className="h-[62px] max-md:h-[45px]"
+                  src={item.image}
+                  alt="item"
+                />
                 <p>{item.name}</p>
                 <p>{item.new_price}$</p>
                 <button
@@ -54,7 +60,8 @@ export function CartItems() {
                   onClick={() => removeFromCart(item.id)}
                   src={removeIcon}
                   alt="X"
-                  className="w-[15px] cursor-pointer"
+                  className="w-[15px] cursor-pointer
+                  max-md:w-[11px]"
                 />
               </div>
               <hr className="h-[3px] bg-[#e2e2e2] border-none" />
@@ -62,10 +69,10 @@ export function CartItems() {
           );
         return null;
       })}
-      <div className="flex mt-12 font-poppins max-lg:flex-col">
+      <div className="flex mt-12 mb-16 font-poppins max-lg:flex-col">
         <div
           className="flex-1 flex flex-col gap-10 mr-52
-        max-xl:mr-24 max-lg:mr-0"
+        max-xl:mr-24 max-lg:mr-0 max-md:gap-7"
         >
           <h1 className="text-xl font-semibold">Cart Totals</h1>
           <div className="text-base text-slate-gray">
@@ -90,7 +97,8 @@ export function CartItems() {
           </div>
           <button
             className="bg-red-500 h-12 w-64 text-white
-          outline-none border-none active:bg-red-700 hover:shadow-3xl"
+          outline-none border-none active:bg-red-700 hover:shadow-3xl
+          max-md:text-sm max-md:h-10 max-md:w-52"
           >
             PROCEED TO CHECKOUT
           </button>
@@ -98,7 +106,7 @@ export function CartItems() {
         <div className="flex-1 ">
           <p
             className="text-sm text-slate-gray mb-3
-          max-lg:mt-10"
+          max-lg:mt-10 max-md:text-xs"
           >
             if you have a promo code, Enter it here
           </p>
@@ -109,13 +117,14 @@ export function CartItems() {
               type="text"
               placeholder="promo code"
               className="bg-[#ececec] px-3 py-4  w-[300px] text-sm
-              rounded-lg outline-none max-lg:w-[60%]"
+              rounded-lg outline-none max-lg:w-[60%]
+              max-md:py-3 "
             />
             <button
               className="bg-black outline-none border-none text-white
             text-sm px-5 py-4 rounded-lg -ml-3 transition-all active:bg-[#383636]
              duration-[0.5s] active:shadow-2xl 
-             max-lg:px-8"
+             max-lg:px-8 max-md:py-3"
             >
               Submit
             </button>
