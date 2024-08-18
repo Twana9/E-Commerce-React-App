@@ -18,6 +18,7 @@ export function Footer() {
       >
         <Link to="/">
           <img
+            onClick={() => scrollTo(0, 0)}
             src={FooterLogo}
             alt="logo"
             className="object-contain 
@@ -27,6 +28,7 @@ export function Footer() {
         </Link>
         <Link to="/">
           <p
+            onClick={() => scrollTo(0, 0)}
             className="text-4xl font-medium cursor-pointer
         max-xl:text-3xl max-sm:text-xl"
           >

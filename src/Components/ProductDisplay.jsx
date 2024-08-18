@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { starDullIcon, starIcon } from "../assets";
 import { useCart } from "../Zustand/store";
 export function ProductDisplay(props) {
   const addToCart = useCart((state) => state.addToCart);
   const { product } = props;
+
+  const [size, setSize] = useState("l");
   return (
     <div
       className="flex  my-0 mx-[100px] 
@@ -115,42 +118,57 @@ export function ProductDisplay(props) {
           font-bold"
           >
             <div
-              className="flex justify-center items-center h-9 w-10
-             border border-slate-200 bg-slate-50 rounded-sm
-              shadow-sm hover:bg-slate-100 cursor-pointer 
-              hover:shadow-lg"
+              onClick={() => setSize("s")}
+              className={`flex justify-center items-center h-9 w-10
+             border border-slate-200  rounded-sm
+              shadow-sm  cursor-pointer 
+              hover:shadow-lg ${
+                size === "s" ? "bg-green-500 text-white" : "bg-slate-50"
+              }`}
             >
               S
             </div>
             <div
-              className="flex justify-center items-center h-9 w-10
-             border border-slate-200 bg-slate-50 rounded-sm
-              shadow-sm hover:bg-slate-100 cursor-pointer 
-              hover:shadow-lg"
+              onClick={() => setSize("m")}
+              className={`flex justify-center items-center h-9 w-10
+                border border-slate-200  rounded-sm
+                 shadow-sm  cursor-pointer 
+                 hover:shadow-lg ${
+                   size === "m" ? "bg-green-500 text-white" : "bg-slate-50"
+                 }`}
             >
               M
             </div>
             <div
-              className="flex justify-center items-center h-9 w-10
-             border border-slate-200 bg-slate-50 rounded-sm
-              shadow-sm hover:bg-slate-100 cursor-pointer 
-              hover:shadow-lg"
+              onClick={() => setSize("l")}
+              className={`flex justify-center items-center h-9 w-10
+                border border-slate-200  rounded-sm
+                 shadow-sm  cursor-pointer 
+                 hover:shadow-lg ${
+                   size === "l" ? "bg-green-500 text-white" : "bg-slate-50"
+                 }`}
             >
               L
             </div>
             <div
-              className="flex justify-center items-center h-9 w-10
-             border border-slate-200 bg-slate-50 rounded-sm
-              shadow-sm hover:bg-slate-100 cursor-pointer 
-              hover:shadow-lg"
+              onClick={() => setSize("xl")}
+              className={`flex justify-center items-center h-9 w-10
+                border border-slate-200  rounded-sm
+                 shadow-sm  cursor-pointer 
+                 hover:shadow-lg ${
+                   size === "xl" ? "bg-green-500 text-white" : "bg-slate-50"
+                 }`}
             >
               XL
             </div>
             <div
-              className="flex justify-center items-center h-9 w-10
-             border border-slate-200 bg-slate-50 rounded-sm
-              shadow-sm hover:bg-slate-100 cursor-pointer 
-              hover:shadow-lg"
+              onClick={() => setSize("xxl")}
+              className={`flex justify-center items-center h-9 w-10
+                border border-slate-200  rounded-sm
+                 shadow-sm  cursor-pointer 
+                 hover:shadow-lg ${
+                   size === "xxl" ? "bg-green-500 text-white" : "bg-slate-50"
+                 }`}
             >
               XXL
             </div>
@@ -160,7 +178,7 @@ export function ProductDisplay(props) {
           onClick={() => addToCart(product.id)}
           className="border text-base h-12 w-48 mt-5 font-semibold
         text-white bg-red-500 hover:bg-red-700 shadow-md
-        max-sm:border-red-600 "
+        max-sm:border-red-600 transform active:translate-y-0.5"
         >
           ADD TO CART
         </button>

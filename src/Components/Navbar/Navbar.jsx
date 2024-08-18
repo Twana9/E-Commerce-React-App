@@ -44,22 +44,28 @@ export function Navbar() {
         className="flex cursor-pointer 
        items-center gap-4 max-md:gap-2"
       >
-        <img
-          src={logo}
-          alt="logo"
-          height={52}
-          width={52}
-          className="object-contain max-md:h-[36px]
+        <Link to="/">
+          <img
+            onClick={() => scrollTo(0, 0)}
+            src={logo}
+            alt="logo"
+            height={52}
+            width={52}
+            className="object-contain max-md:h-[36px]
           max-md:w-[36px] max-lg:w-[45px] max-lg:h-[45px]
           mb-1"
-        />
-        <p
-          className="text-[#171717] font-semibold 
+          />
+        </Link>
+        <Link to="/">
+          <p
+            onClick={() => scrollTo(0, 0)}
+            className="text-[#171717] font-semibold 
         text-[29px] font-sans max-md:text-[16px]
         max-lg:text-[23px]"
-        >
-          SHOPPING
-        </p>
+          >
+            SHOPPING
+          </p>
+        </Link>
       </div>
       <ul
         className="flex items-center gap-[50px]
