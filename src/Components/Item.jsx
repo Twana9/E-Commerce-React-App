@@ -4,6 +4,7 @@ export function Item(props) {
   function handleClick() {
     window.scrollTo(0, 80);
   }
+
   return (
     <div className="w-[300px] font-poppins overflow-hidden ">
       <Link to={`/product/${props.id}`}>

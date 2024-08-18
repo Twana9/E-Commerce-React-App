@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export function NewsLetter() {
+  const [email, setEmail] = useState("");
   return (
     <div
       className="bg-hero flex flex-col justify-center items-center
@@ -19,6 +22,8 @@ export function NewsLetter() {
       <div className="flex justify-center w-full ">
         <input
           type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Your Email"
           className="ring-1 ring-slate-300 py-3 px-5 rounded-full
           w-[50%] outline-none focus:ring-1 focus:ring-slate-400

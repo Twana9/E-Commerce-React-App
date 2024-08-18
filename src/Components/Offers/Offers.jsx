@@ -36,14 +36,20 @@ export function Offers() {
         >
           ONLY ON BEST SELLERS PRODUCTS
         </p>
-        <button
-          className="w-[280px] h-14 bg-red-600 text-white
-        rounded-full font-palanquin text-xl font-medium border-none
-        hover:bg-red-700 max-xl:mt-6 max-sm:w-[200px] max-sm:h-10
-        max-sm:text-lg max-lg:mt-0.5"
+        <a
+          href="https://www.google.com/search?sca_esv=0dc2904424ef13c1&sca_upv=1&sxsrf=ADLYWIK3WzD9lki88FZW9NtVk7Y8tgMv4g:1723961711092&q=exclusive+clothing+offers&source=lnms&fbs=AEQNm0Aa4sjWe7Rqy32pFwRj0UkWd8nbOJfsBGGB5IQQO6L3J_86uWOeqwdnV0yaSF-x2jo6Ttnu6iRjjgGjARfLolnBxwfCgbMJhqRa3BtPLzlIdwE1cU58W5aNPjvgQAqxhFfItrlfNzOKuaaMyldVwSol2h6U4QUx3ax9SmhSWK6kCZHBTHE&sa=X&ved=2ahUKEwjvn5Xr8f2HAxVm_rsIHT0lKH0Q0pQJegQIExAB&biw=1366&bih=633&dpr=1"
+          target="_blank"
         >
-          Check Now
-        </button>
+          <button
+            className="w-[280px] h-14 bg-red-600 text-white
+        rounded-full font-palanquin text-xl font-medium border-none
+
+        hover:bg-red-700 max-xl:mt-6 max-sm:w-[200px] max-sm:h-10
+        max-sm:text-lg max-lg:mt-0.5 transform active:translate-y-0.5"
+          >
+            Check Now
+          </button>
+        </a>
       </div>
       <div
         className="offers-right flex-1 flex justify-center items-end 

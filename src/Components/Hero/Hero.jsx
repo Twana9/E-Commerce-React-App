@@ -56,16 +56,21 @@ export function Hero() {
           </p>
         </div>
         <div>
-          <div
-            className="hero-btn flex justify-center items-center
+          <a
+            href="https://www.google.com/search?q=latest+clothe+colection&oq=latest+clothe+colection&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgNGB4yCggCEAAYBRgNGB4yCggDEAAYBRgNGB4yCggEEAAYBRgNGB4yCggFEAAYCBgNGB4yCggGEAAYCBgNGB4yDQgHEAAYhgMYgAQYigUyDQgIEAAYhgMYgAQYigUyDQgJEAAYhgMYgAQYigXSAQoxMzQyMGowajE1qAIIsAIB&sourceid=chrome&ie=UTF-8"
+            target="_blank"
+          >
+            <div
+              className="hero-btn flex justify-center items-center
           gap-3 bg-red-600 text-white font-medium text-lg
           rounded-[75px] h-[60px] w-[270px] mt-7 max-xl:w-[230px] 
-          max-xl:h-[50px] max-sm:text-[16px]
-          max-sm:h-[45px]"
-          >
-            <div>Latest Collection</div>
-            <img src={arrow} alt="arrow" />
-          </div>
+          max-xl:h-[50px] max-sm:text-[16px] hover:bg-red-700
+          max-sm:h-[45px] transform active:translate-y-0.5"
+            >
+              <div>Latest Collection</div>
+              <img src={arrow} alt="arrow" />
+            </div>
+          </a>
         </div>
       </div>
       <div className="hero-right flex-1 flex justify-center items-center">
