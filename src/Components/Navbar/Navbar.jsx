@@ -149,7 +149,7 @@ function Hamburger({ isMenuOpen, selectedMenu, setSelectedMenu, handleClose }) {
   return (
     <div
       className={`fixed  inset-0 transform lg:hidden
-      transition-transform duration-500 ${
+      transition-transform duration-500 z-50 ${
         isMenuOpen ? "translate-x-0" : "translate-x-full"
       }
       `}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { dropDownIcon } from "../assets";
 import { Item } from "../Components/Item";
 import { useProduct } from "../Zustand/store";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function ShopCategory(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,17 +42,39 @@ export function ShopCategory(props) {
           cursor-pointer max-sm:text-[12px] max-sm:px-4 max-sm:py-2
           max-sm:gap-1 max-sm:whitespace-nowrap relative
           transform
-          active:translate-y-0.5 hover:shadow-xl z-50"
+          active:translate-y-0.5 hover:shadow-xl z-10"
         >
-          {isOpen && (
-            <div
-              className="absolute -bottom-[43px] left-[37px]
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{
+                  rotate: 0,
+                  scale: 0,
+                  y: 0,
+                }}
+                animate={{
+                  rotate: "360deg",
+                  scale: 1,
+                  y: [0, 100, -100, -100, 0],
+                }}
+                exit={{
+                  rotate: 0,
+                  scale: 0,
+                  y: 0,
+                  y: [0, 100, -100, -100, 0],
+                }}
+                transition={{
+                  duration: 0.3,
+                  times: [0, 0.25, 0.5, 0.85, 1],
+                }}
+                className="absolute -bottom-[43px] left-[37px]
           bg-[#1a1919] text-white rounded-lg p-1.5 
           max-sm:left-[24px] max-sm:-bottom-[35px]"
-            >
-              soon
-            </div>
-          )}
+              >
+                soon
+              </motion.div>
+            )}
+          </AnimatePresence>
           Sort by
           <img
             src={dropDownIcon}
@@ -69,28 +92,47 @@ export function ShopCategory(props) {
             props.category === item.category && <Item key={item.id} {...item} />
         )}
       </div>
-      <div
-        className="padding-x my-24 flex justify-center items-center 
-      max-md:my-20 max-sm:my-16 flex-col gap-16"
+      <motion.div
+        layout
+        className="padding-x h-40 my-24 flex justify-center items-center 
+      max-md:my-20 max-sm:my-16 flex-col gap-16 border border-red-900"
       >
         <button
           onClick={handleClickTwo}
-          className="text-lg px-14 py-5 bg-gray-200
+          className="text-lg px-14 min-h-16 bg-gray-200
          rounded-full border-none text-black hover:bg-gray-300
          max-sm:px-10 max-sm:py-4 max-sm:text-base transform
           active:translate-y-0.5"
         >
           Explore More
         </button>
-        {isMarqOpen && (
-          <marquee
-            className="
+        <AnimatePresence mode="popLayout">
+          {isMarqOpen && (
+            <motion.marquee
+              initial={{
+                scale: 0,
+                y: 0,
+              }}
+              animate={{
+                scale: 1,
+                y: [0, 100, -100, -100, 0],
+              }}
+              exit={{
+                scale: 0,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+                times: [0, 0.25, 0.5, 0.85, 1],
+              }}
+              className="
           bg-[#1a1919] text-white rounded-lg py-1.5"
-          >
-            comming soon - - - comming soon - - - comming soon
-          </marquee>
-        )}
-      </div>
+            >
+              comming soon - - - comming soon - - - comming soon
+            </motion.marquee>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }
