@@ -92,20 +92,20 @@ export function ShopCategory(props) {
             props.category === item.category && <Item key={item.id} {...item} />
         )}
       </div>
-      <motion.div
-        layout
-        className="padding-x h-40 my-24 flex justify-center items-center 
-      max-md:my-20 max-sm:my-16 flex-col gap-16 border border-red-900"
+      <div
+        className="padding-x h-[200px] my-24 flex justify-center items-center 
+      max-md:my-20 max-sm:my-16 flex-col gap-16 "
       >
-        <button
+        <motion.button
+          layout
           onClick={handleClickTwo}
-          className="text-lg px-14 min-h-16 bg-gray-200
+          className="text-lg px-14 py-6 bg-gray-200
          rounded-full border-none text-black hover:bg-gray-300
          max-sm:px-10 max-sm:py-4 max-sm:text-base transform
           active:translate-y-0.5"
         >
           Explore More
-        </button>
+        </motion.button>
         <AnimatePresence mode="popLayout">
           {isMarqOpen && (
             <motion.marquee
@@ -122,7 +122,7 @@ export function ShopCategory(props) {
                 y: 0,
               }}
               transition={{
-                duration: 1,
+                duration: 0.7,
                 times: [0, 0.25, 0.5, 0.85, 1],
               }}
               className="
@@ -132,7 +132,7 @@ export function ShopCategory(props) {
             </motion.marquee>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }
