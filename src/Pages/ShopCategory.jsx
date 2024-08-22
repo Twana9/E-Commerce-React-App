@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { dropDownIcon } from "../assets";
 import { Item } from "../Components/Item";
 import { useProduct } from "../Zustand/store";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, easeIn, motion } from "framer-motion";
 
 export function ShopCategory(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,11 @@ export function ShopCategory(props) {
   return (
     <div className="font-poppins max-container">
       <div className="w-[93%] my-5 mx-auto ">
-        <img
+        <motion.img
+          key={props.category}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: easeIn }}
           src={props.banner}
           alt="banner"
           className="object-contain    

@@ -8,7 +8,7 @@ export function Item(props) {
 
   return (
     <motion.div
-      initial={{ y: "-50px", opacity: 0 }}
+      initial={{ y: "-30px", opacity: 0.4 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeInOut", staggerChildren: 1 }}
       className="w-[300px] font-poppins overflow-hidden "
