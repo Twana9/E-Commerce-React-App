@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export function NewsLetter() {
   const [email, setEmail] = useState("");
@@ -7,19 +8,30 @@ export function NewsLetter() {
       className="bg-hero flex flex-col justify-center items-center
      gap-7 p-14 max-container max-md:gap-5 max-sm:gap-2 max-sm:py-8"
     >
-      <p
+      <motion.p
+        initial={{ y: "-50px", opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
         className="font-poppins text-slate-950 text-4xl font-medium
       whitespace-nowrap max-lg:text-3xl max-md:text-2xl max-sm:text-[14px]"
       >
         Get Exclusive Offers On Your Email
-      </p>
-      <p
+      </motion.p>
+      <motion.p
+        initial={{ y: "-50px", opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
         className="font-poppins text-slate-950 text-xl
       max-lg:text-lg max-md:text-sm max-sm:text-[8px] whitespace-nowrap"
       >
         Subscribe to our newsletter and stay updated
-      </p>
-      <div className="flex justify-center w-full ">
+      </motion.p>
+      <motion.div
+        initial={{ y: "-50px", opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="flex justify-center w-full "
+      >
         <input
           type="email"
           value={email}
@@ -43,7 +55,7 @@ export function NewsLetter() {
         >
           Subscribe
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 }

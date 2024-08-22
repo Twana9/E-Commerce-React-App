@@ -1,4 +1,5 @@
 import { handIcon, arrow, heroImage } from "../../assets";
+import { motion } from "framer-motion";
 import "./Hero.css";
 export function Hero() {
   return (
@@ -8,7 +9,10 @@ export function Hero() {
        max-lg:flex-col max-lg:items-center overflow-hidden 
        "
     >
-      <div
+      <motion.div
+        initial={{ x: "-200px", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
         className="hero-left flex-1 flex flex-col p-24 gap-3
       font-poppins max-xl:gap-1 max-lg:py-12  max-lg:gap-6
       max-lg:items-center"
@@ -72,8 +76,13 @@ export function Hero() {
             </div>
           </a>
         </div>
-      </div>
-      <div className="hero-right flex-1 flex justify-center items-center">
+      </motion.div>
+      <motion.div
+        initial={{ x: "200px", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="hero-right flex-1 flex justify-center items-center"
+      >
         <img
           src={heroImage}
           alt="image"
@@ -82,7 +91,7 @@ export function Hero() {
           className="max-xl:w-[400px] max-xl:h-[500px]
           max-sm:w-[330px] max-sm:h-[430px]"
         />
-      </div>
+      </motion.div>
     </div>
   );
 }

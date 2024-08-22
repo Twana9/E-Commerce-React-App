@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export function Item(props) {
   function handleClick() {
@@ -6,7 +7,12 @@ export function Item(props) {
   }
 
   return (
-    <div className="w-[300px] font-poppins overflow-hidden ">
+    <motion.div
+      initial={{ y: "-50px", opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeInOut", staggerChildren: 1 }}
+      className="w-[300px] font-poppins overflow-hidden "
+    >
       <Link to={`/product/${props.id}`}>
         <img
           onClick={handleClick}
@@ -30,6 +36,6 @@ export function Item(props) {
           {props.old_price}$
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
