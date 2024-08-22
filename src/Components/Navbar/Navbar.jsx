@@ -16,7 +16,10 @@ export function Navbar() {
     e.stopPropagation();
     setIsMenuOpen(!isMenuOpen);
   }
-  //////////////////////////////
+  function top() {
+    window.scrollTo(0, 0);
+  }
+  ///////////////////////////////////////////////////
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth > 1024) setIsMenuOpen(false);
@@ -26,7 +29,7 @@ export function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, [isMenuOpen]);
-  /////////////////////////////
+  ///////////////////////////////////////////////////
   useEffect(() => {
     if (isMenuOpen) document.body.classList.add("overflow-hidden");
     else document.body.classList.remove("overflow-hidden");
@@ -38,7 +41,7 @@ export function Navbar() {
     <div
       className="flex justify-around shadow-nav
      shadow-black p-4 max-lg:justify-between
-     "
+     sticky top-0 bg-white z-50"
     >
       <div
         className="flex cursor-pointer 
@@ -72,19 +75,43 @@ export function Navbar() {
         font-medium text-lg text-slate-700
         font-monserat max-lg:hidden"
       >
-        <li onClick={() => setSelectedMenu("shop")} className="li-big">
+        <li
+          onClick={() => {
+            setSelectedMenu("shop");
+            top();
+          }}
+          className="li-big"
+        >
           <Link to="/">Shop</Link>
           {selectedMenu === "shop" && <hr className="hr" />}
         </li>
-        <li onClick={() => setSelectedMenu("men")} className="li-big">
+        <li
+          onClick={() => {
+            setSelectedMenu("men");
+            top();
+          }}
+          className="li-big"
+        >
           <Link to="/men">Men</Link>
           {selectedMenu === "men" && <hr className="hr" />}
         </li>
-        <li onClick={() => setSelectedMenu("women")} className="li-big">
+        <li
+          onClick={() => {
+            setSelectedMenu("women");
+            top();
+          }}
+          className="li-big"
+        >
           <Link to="/women">Women</Link>
           {selectedMenu === "women" && <hr className="hr" />}
         </li>
-        <li onClick={() => setSelectedMenu("kids")} className="li-big">
+        <li
+          onClick={() => {
+            setSelectedMenu("kids");
+            top();
+          }}
+          className="li-big"
+        >
           <Link to="/kids">Kids</Link>
           {selectedMenu === "kids" && <hr className="hr" />}
         </li>
