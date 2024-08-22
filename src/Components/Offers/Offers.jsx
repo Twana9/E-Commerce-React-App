@@ -45,10 +45,10 @@ export function Offers() {
           target="_blank"
         >
           <button
-            className="w-[280px] h-14 bg-red-600 text-white
+            className="w-[280px] h-14 bg-orange-500 text-white
         rounded-full font-palanquin text-xl font-medium border-none
 
-        hover:bg-red-700 max-xl:mt-6 max-sm:w-[200px] max-sm:h-10
+        hover:bg-orange-600 max-xl:mt-6 max-sm:w-[200px] max-sm:h-10
         max-sm:text-lg max-lg:mt-0.5 transform active:translate-y-0.5"
           >
             Check Now

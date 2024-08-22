@@ -66,9 +66,9 @@ export function Hero() {
           >
             <div
               className="hero-btn flex justify-center items-center
-          gap-3 bg-red-600 text-white font-medium text-lg
+          gap-3 bg-orange-500 text-white font-medium text-lg
           rounded-[75px] h-[60px] w-[270px] mt-7 max-xl:w-[230px] 
-          max-xl:h-[50px] max-sm:text-[16px] hover:bg-red-700
+          max-xl:h-[50px] max-sm:text-[16px] hover:bg-orange-600
           max-sm:h-[45px] transform active:translate-y-0.5"
             >
               <div>Latest Collection</div>

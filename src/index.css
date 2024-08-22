@@ -49,7 +49,7 @@
 }
 /* ///////////shop//////////////////// */
 .bg-hero {
-  background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+  background: linear-gradient(180deg, #b7e9dd, #e1ffea22 60%);
 }
 /* /////////////////////////////////// */
 @layer components {
