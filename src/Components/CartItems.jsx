@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { removeIcon } from "../assets";
 import { useCart, useProduct } from "../Zustand/store";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
 
 export function CartItems() {
   const [promo, setPromo] = useState("");
@@ -30,14 +31,23 @@ export function CartItems() {
         <p>Remove</p>
       </div>
       <hr className=" h-[3px] bg-[#e2e2e2] border-none" />
-      {products.map((item) => {
-        // this condition tells us if the item id exists in the cart obj and its bigger than 0
-        //the item shows in the cart section
-        if (cart[item.id] > 0)
-          return (
-            <div key={item.id} className="">
-              <div
-                className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr]
+      <AnimatePresence mode="popLayout">
+        {products.map((item) => {
+          // this condition tells us if the item id exists in the cart obj and its bigger than 0
+          //the item shows in the cart section
+          if (cart[item.id] > 0)
+            return (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: easeInOut }}
+                layout
+                key={item.id}
+                className=""
+              >
+                <div
+                  className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr]
                  my-4 place-items-center gap-[75px] text-base
                  font-poppins text-slate-gray 
                  max-xl:grid-cols-[0.6fr_2.75fr_0.75fr_0.7fr_0.75fr_0.7fr]
@@ -47,37 +57,42 @@ export function CartItems() {
                  max-sm:text-[12px]
                  max-sm:grid-cols-[0.75fr_2.75fr_0.75fr_0.7fr_0.75fr_0.7fr]
                  "
-              >
-                <img
-                  className="h-[62px] max-md:h-[45px] max-sm:h-[37px]"
-                  src={item.image}
-                  alt="item"
-                />
-                <p className="max-sm:tracking-tight max-sm:text-center">
-                  {item.name}
-                </p>
-                <p>{item.new_price}$</p>
-                <button
-                  className="border-[1px] border-slate-200
-                 h-8 w-10 max-sm:h-6 max-sm:w-8"
                 >
-                  {cart[item.id]}
-                </button>
-                <p>{item.new_price * cart[item.id]}$</p>
-                <img
-                  onClick={() => removeFromCart(item.id)}
-                  src={removeIcon}
-                  alt="X"
-                  className="w-[15px] cursor-pointer
+                  <img
+                    className="h-[62px] max-md:h-[45px] max-sm:h-[37px]"
+                    src={item.image}
+                    alt="item"
+                  />
+                  <p className="max-sm:tracking-tight max-sm:text-center">
+                    {item.name}
+                  </p>
+                  <p>{item.new_price}$</p>
+                  <button
+                    className="border-[1px] border-slate-200
+                 h-8 w-10 max-sm:h-6 max-sm:w-8"
+                  >
+                    {cart[item.id]}
+                  </button>
+                  <p>{item.new_price * cart[item.id]}$</p>
+                  <img
+                    onClick={() => removeFromCart(item.id)}
+                    src={removeIcon}
+                    alt="X"
+                    className="w-[15px] cursor-pointer
                   max-md:w-[11px]"
-                />
-              </div>
-              <hr className="h-[3px] bg-[#e2e2e2] border-none" />
-            </div>
-          );
-        return null;
-      })}
-      <div className="flex mt-12 mb-16 font-poppins max-lg:flex-col">
+                  />
+                </div>
+                <hr className="h-[3px] bg-[#e2e2e2] border-none" />
+              </motion.div>
+            );
+          return null;
+        })}
+      </AnimatePresence>
+      <motion.div
+        transition={{ duration: 0.5, ease: easeInOut }}
+        layout
+        className="flex mt-12 mb-16 font-poppins max-lg:flex-col"
+      >
         <div
           className="flex-1 flex flex-col gap-10 mr-52
         max-xl:mr-24 max-lg:mr-0 max-md:gap-7"
@@ -138,7 +153,7 @@ export function CartItems() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
