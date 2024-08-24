@@ -8,6 +8,28 @@ export function ShopCategory(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMarqOpen, setIsMarqOpen] = useState(false);
   const products = useProduct((state) => state.products);
+  function getProducts() {
+    products.map((item) => {
+      if (products.category === props.category) {
+        return item;
+      }
+    });
+  }
+  const [newProducts, setNewProducts] = useState(getProducts());
+  function sortCheap() {
+    const sortedAscending = newProducts
+      .slice()
+      .sort((a, b) => a.new_price - b.new_price);
+
+    setNewProducts(sortedAscending);
+  }
+  function sortExpensive() {
+    const sortedDescending = all_product
+      .slice()
+      .sort((a, b) => b.new_price - a.new_price);
+    setNewProducts(sortedDescending);
+  }
+
   useEffect(() => {
     setIsOpen(false);
     setIsMarqOpen(false);
@@ -39,8 +61,9 @@ export function ShopCategory(props) {
         <p className="text-lg font-medium max-sm:text-sm ">
           <span className="font-semibold">Showing 1-12</span> out of 36 products
         </p>
+        {/* /////////////////////////////////////////////////////////////////////// */}
         <div
-          onClick={handleClick}
+          onClick={sortCheap}
           className="flex  items-center text-medium gap-2.5
          px-5 py-3 border border-slate-gray rounded-full
           cursor-pointer max-sm:text-[12px] max-sm:px-4 max-sm:py-2
@@ -48,37 +71,6 @@ export function ShopCategory(props) {
           transform
           active:translate-y-0.5 hover:shadow-xl z-10"
         >
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{
-                  rotate: 0,
-                  scale: 0,
-                  y: 0,
-                }}
-                animate={{
-                  rotate: "360deg",
-                  scale: 1,
-                  y: [0, 100, -100, -100, 0],
-                }}
-                exit={{
-                  rotate: 0,
-                  scale: 0,
-                  y: 0,
-                  y: [0, 100, -100, -100, 0],
-                }}
-                transition={{
-                  duration: 0.3,
-                  times: [0, 0.25, 0.5, 0.85, 1],
-                }}
-                className="absolute -bottom-[43px] left-[37px]
-          bg-[#1a1919] text-white rounded-lg p-1.5 
-          max-sm:left-[24px] max-sm:-bottom-[35px]"
-              >
-                soon
-              </motion.div>
-            )}
-          </AnimatePresence>
           Sort by
           <img
             src={dropDownIcon}
@@ -86,15 +78,15 @@ export function ShopCategory(props) {
             className="object-contain max-sm:h-1.5"
           />
         </div>
+        {/* /////////////////////////////////////////////////////////////////////////////// */}
       </div>
       <div
         className="grid justify-items-center  grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2
        max-md:grid-cols-1 gap-20 padding-x my-5 "
       >
-        {products.map(
-          (item) =>
-            props.category === item.category && <Item key={item.id} {...item} />
-        )}
+        {newProducts.map((item) => (
+          <Item key={item.id} {...item} />
+        ))}
       </div>
       <div
         className="padding-x h-[200px] my-24 flex justify-center items-center 
@@ -140,3 +132,35 @@ export function ShopCategory(props) {
     </div>
   );
 }
+
+// <AnimatePresence>
+//             {isOpen && (
+//               <motion.div
+//                 initial={{
+//                   rotate: 0,
+//                   scale: 0,
+//                   y: 0,
+//                 }}
+//                 animate={{
+//                   rotate: "360deg",
+//                   scale: 1,
+//                   y: [0, 100, -100, -100, 0],
+//                 }}
+//                 exit={{
+//                   rotate: 0,
+//                   scale: 0,
+//                   y: 0,
+//                   y: [0, 100, -100, -100, 0],
+//                 }}
+//                 transition={{
+//                   duration: 0.3,
+//                   times: [0, 0.25, 0.5, 0.85, 1],
+//                 }}
+//                 className="absolute -bottom-[43px] left-[37px]
+//           bg-[#1a1919] text-white rounded-lg p-1.5
+//           max-sm:left-[24px] max-sm:-bottom-[35px]"
+//               >
+//                 soon
+//               </motion.div>
+//             )}
+//           </AnimatePresence>
