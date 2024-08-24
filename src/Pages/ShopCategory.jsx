@@ -9,13 +9,17 @@ export function ShopCategory(props) {
   const [isMarqOpen, setIsMarqOpen] = useState(false);
   const products = useProduct((state) => state.products);
   function getProducts() {
-    products.map((item) => {
-      if (products.category === props.category) {
+    let newProducts = [];
+    newProducts = products.filter((item) => {
+      if (item.category === props.category) {
         return item;
       }
     });
+    return newProducts;
   }
-  const [newProducts, setNewProducts] = useState(getProducts());
+
+  const [newProducts, setNewProducts] = useState([]);
+
   function sortCheap() {
     const sortedAscending = newProducts
       .slice()
@@ -24,17 +28,19 @@ export function ShopCategory(props) {
     setNewProducts(sortedAscending);
   }
   function sortExpensive() {
-    const sortedDescending = all_product
+    const sortedDescending = newProducts
       .slice()
       .sort((a, b) => b.new_price - a.new_price);
     setNewProducts(sortedDescending);
   }
-
+  useEffect(() => {
+    setNewProducts(getProducts());
+  }, [products, props.category]);
   useEffect(() => {
     setIsOpen(false);
     setIsMarqOpen(false);
   }, [props.category]);
-  function handleClick() {
+  function handleOpenSort() {
     setIsOpen(!isOpen);
   }
   function handleClickTwo() {
@@ -63,7 +69,7 @@ export function ShopCategory(props) {
         </p>
         {/* /////////////////////////////////////////////////////////////////////// */}
         <div
-          onClick={sortCheap}
+          onClick={handleOpenSort}
           className="flex  items-center text-medium gap-2.5
          px-5 py-3 border border-slate-gray rounded-full
           cursor-pointer max-sm:text-[12px] max-sm:px-4 max-sm:py-2
@@ -77,17 +83,62 @@ export function ShopCategory(props) {
             alt="V"
             className="object-contain max-sm:h-1.5"
           />
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{
+                  rotate: 0,
+                  scale: 0,
+                  y: 0,
+                }}
+                animate={{
+                  rotate: "360deg",
+                  scale: 1,
+                  y: [0, 100, -100, -100, 0],
+                }}
+                exit={{
+                  rotate: 0,
+                  scale: 0,
+                  y: 0,
+                  y: [0, 100, -100, -100, 0],
+                }}
+                transition={{
+                  duration: 0.3,
+                  times: [0, 0.25, 0.5, 0.85, 1],
+                }}
+                className="absolute -bottom-[60px] left-[15px]
+          bg-[#1a1919] text-white rounded-lg p-1.5
+          max-sm:left-[2px] max-sm:-bottom-[52px] flex flex-col
+          gap-1"
+              >
+                <div
+                  className="text-sm whitespace-nowrap max-sm:text-xs"
+                  onClick={sortCheap}
+                >
+                  Cheap ▾
+                </div>
+                <div
+                  className="text-sm whitespace-nowrap max-sm:text-xs"
+                  onClick={sortExpensive}
+                >
+                  Expensive ▾
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
         {/* /////////////////////////////////////////////////////////////////////////////// */}
       </div>
-      <div
+      <motion.div
+        transition={{ duration: 1 }}
+        layout
         className="grid justify-items-center  grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2
        max-md:grid-cols-1 gap-20 padding-x my-5 "
       >
         {newProducts.map((item) => (
           <Item key={item.id} {...item} />
         ))}
-      </div>
+      </motion.div>
       <div
         className="padding-x h-[200px] my-24 flex justify-center items-center 
       max-md:my-20 max-sm:my-16 flex-col gap-16 "
@@ -132,35 +183,3 @@ export function ShopCategory(props) {
     </div>
   );
 }
-
-// <AnimatePresence>
-//             {isOpen && (
-//               <motion.div
-//                 initial={{
-//                   rotate: 0,
-//                   scale: 0,
-//                   y: 0,
-//                 }}
-//                 animate={{
-//                   rotate: "360deg",
-//                   scale: 1,
-//                   y: [0, 100, -100, -100, 0],
-//                 }}
-//                 exit={{
-//                   rotate: 0,
-//                   scale: 0,
-//                   y: 0,
-//                   y: [0, 100, -100, -100, 0],
-//                 }}
-//                 transition={{
-//                   duration: 0.3,
-//                   times: [0, 0.25, 0.5, 0.85, 1],
-//                 }}
-//                 className="absolute -bottom-[43px] left-[37px]
-//           bg-[#1a1919] text-white rounded-lg p-1.5
-//           max-sm:left-[24px] max-sm:-bottom-[35px]"
-//               >
-//                 soon
-//               </motion.div>
-//             )}
-//           </AnimatePresence>
