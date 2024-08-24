@@ -13,8 +13,8 @@ export function Hero() {
         initial={{ x: "-200px", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
-        className="hero-left flex-1 flex flex-col p-24 gap-3
-      font-poppins max-xl:gap-1 max-lg:py-12  max-lg:gap-6
+        className="hero-left flex-1 flex flex-col p-24 gap-2
+      font-poppins max-xl:gap-0.5 max-lg:py-12  max-lg:gap-2
       max-lg:items-center"
       >
         <h2
@@ -24,8 +24,8 @@ export function Hero() {
           NEW ARRIVALS ONLY
         </h2>
         <div
-          className="hero-txt flex flex-col -space-y-8
-        max-xl:-space-y-6 max-lg:-space-y-4 "
+          className="hero-txt flex flex-col -space-y-9
+        max-xl:-space-y-7 max-lg:-space-y-9 "
         >
           <div className="flex items-center gap-2 max-lg:justify-center">
             <p
@@ -87,9 +87,9 @@ export function Hero() {
           src={heroImage}
           alt="image"
           height={550}
-          width={500}
-          className="max-xl:w-[400px] max-xl:h-[500px]
-          max-sm:w-[330px] max-sm:h-[430px]"
+          width={410}
+          className="max-xl:w-[360px] max-xl:h-[500px]
+          max-sm:w-[290px] max-sm:h-[420px]"
         />
       </motion.div>
     </div>
