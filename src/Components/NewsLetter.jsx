@@ -11,6 +11,7 @@ export function NewsLetter() {
       <motion.p
         initial={{ y: "-50px", opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
         className="font-poppins text-slate-950 text-4xl font-medium
       whitespace-nowrap max-lg:text-3xl max-md:text-2xl max-sm:text-[14px]"
@@ -20,6 +21,7 @@ export function NewsLetter() {
       <motion.p
         initial={{ y: "-50px", opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.3 }}
         className="font-poppins text-slate-950 text-xl
       max-lg:text-lg max-md:text-sm max-sm:text-[8px] whitespace-nowrap"
@@ -29,6 +31,7 @@ export function NewsLetter() {
       <motion.div
         initial={{ y: "-50px", opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4 }}
         className="flex justify-center w-full "
       >

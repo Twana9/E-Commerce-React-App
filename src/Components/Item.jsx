@@ -10,7 +10,8 @@ export function Item(props) {
     <motion.div
       initial={{ y: "-30px", opacity: 0.4 }}
       whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeInOut", staggerChildren: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
       className="w-[300px] font-poppins overflow-hidden "
     >
       <Link to={`/product/${props.id}`}>

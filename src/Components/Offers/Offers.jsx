@@ -14,6 +14,7 @@ export function Offers() {
       <motion.div
         initial={{ x: "-200px", opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
         className="offers-left flex-1 flex flex-col gap-12 p-20
       justify-center max-xl:gap-6 max-lg:items-center max-sm:gap-1
@@ -58,6 +59,7 @@ export function Offers() {
       <motion.div
         initial={{ x: "200px", opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
         className="offers-right flex-1 flex justify-center items-end 
       pt-24 max-lg:pt-0"
