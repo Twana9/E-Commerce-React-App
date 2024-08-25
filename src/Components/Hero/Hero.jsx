@@ -6,7 +6,8 @@ export function Hero() {
     <div
       className="hero flex items-center 
        h-full max-container
-       max-lg:flex-col max-lg:items-center overflow-hidden 
+       max-lg:flex-col max-lg:items-center overflow-hidden
+        
        "
     >
       <motion.div
@@ -15,7 +16,7 @@ export function Hero() {
         transition={{ duration: 0.6, ease: "easeInOut" }}
         className="hero-left flex-1 flex flex-col p-24 gap-2
       font-poppins max-xl:gap-0.5 max-lg:py-12  max-lg:gap-2
-      max-lg:items-center"
+      max-lg:items-center "
       >
         <h2
           className=" text-xl
