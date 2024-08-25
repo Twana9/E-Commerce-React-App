@@ -5,9 +5,17 @@ import { useProduct } from "../Zustand/store";
 import { AnimatePresence, easeIn, motion } from "framer-motion";
 
 export function ShopCategory(props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSortOpen, setIsSortOpen] = useState(false);
   const [isMarqOpen, setIsMarqOpen] = useState(false);
+  const [newProducts, setNewProducts] = useState([]);
   const products = useProduct((state) => state.products);
+  useEffect(() => {
+    setNewProducts(getProducts());
+  }, [products, props.category]);
+  useEffect(() => {
+    setIsSortOpen(false);
+    setIsMarqOpen(false);
+  }, [props.category]);
   function getProducts() {
     let newProducts = [];
     newProducts = products.filter((item) => {
@@ -17,9 +25,9 @@ export function ShopCategory(props) {
     });
     return newProducts;
   }
-
-  const [newProducts, setNewProducts] = useState([]);
-
+  // slice() is used here to create a shallow copy of the newProducts array.
+  //  This ensures that the original array remains unmodified while we perform the sorting.
+  //the sort modify the sliced array
   function sortCheap() {
     const sortedAscending = newProducts
       .slice()
@@ -33,15 +41,8 @@ export function ShopCategory(props) {
       .sort((a, b) => b.new_price - a.new_price);
     setNewProducts(sortedDescending);
   }
-  useEffect(() => {
-    setNewProducts(getProducts());
-  }, [products, props.category]);
-  useEffect(() => {
-    setIsOpen(false);
-    setIsMarqOpen(false);
-  }, [props.category]);
   function handleOpenSort() {
-    setIsOpen(!isOpen);
+    setIsSortOpen(!isSortOpen);
   }
   function handleClickTwo() {
     setIsMarqOpen(!isMarqOpen);
@@ -84,7 +85,7 @@ export function ShopCategory(props) {
             className="object-contain max-sm:h-1.5"
           />
           <AnimatePresence>
-            {isOpen && (
+            {isSortOpen && (
               <motion.div
                 initial={{
                   rotate: 0,
@@ -129,16 +130,14 @@ export function ShopCategory(props) {
         </div>
         {/* /////////////////////////////////////////////////////////////////////////////// */}
       </div>
-      <motion.div
-        transition={{ duration: 1 }}
-        layout
+      <div
         className="grid justify-items-center  grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2
        max-md:grid-cols-1 gap-20 padding-x my-5 "
       >
         {newProducts.map((item) => (
           <Item key={item.id} {...item} />
         ))}
-      </motion.div>
+      </div>
       <div
         className="padding-x h-[200px] my-24 flex justify-center items-center 
       max-md:my-20 max-sm:my-16 flex-col gap-16 "
@@ -155,7 +154,7 @@ export function ShopCategory(props) {
         </motion.button>
         <AnimatePresence mode="popLayout">
           {isMarqOpen && (
-            <motion.marquee
+            <motion.div
               initial={{
                 scale: 0,
                 y: 0,
@@ -173,10 +172,10 @@ export function ShopCategory(props) {
                 times: [0, 0.25, 0.5, 0.85, 1],
               }}
               className="
-          bg-[#1a1919] text-white rounded-lg py-1.5"
+          bg-[#1a1919] text-white rounded-lg py-1.5 w-[70%] text-center"
             >
-              comming soon - - - comming soon - - - comming soon
-            </motion.marquee>
+              comming soon
+            </motion.div>
           )}
         </AnimatePresence>
       </div>
